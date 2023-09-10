@@ -1,8 +1,58 @@
 header {
-    background-color: #333;
-    color:white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    border: 1px solid black;
 }
 
 h1 {
     text-align: center;
+}
+
+.logo {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.header-content {
+    float: 1;
+    
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.home-content {
+    justify-content: center;
+}
+
+.bottom-info {
+    display: flex;
+    justify-content: center;
+    left: 0;
+    bottom: 0;
+    border: 1px solid black;
+}
+
+.home-about {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.home-links {
+    width: 50%;
+    text-align: center;
+}
+
+.contacts {
+    font-size: 120%;
+    list-style-position: inside;
+}
+
+ol.contacts li {
+    text-align: left;
 }
