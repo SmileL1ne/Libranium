@@ -26,6 +26,10 @@ h1 {
     right: 0;
 }
 
+.book-category-items-section{
+    background-color: antiquewhite;
+}
+
 .home-content {
     justify-content: center;
 }
