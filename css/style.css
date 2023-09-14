@@ -32,6 +32,7 @@ h1 {
 
 .book-category-item {
     display: inline-block;
+    margin: 20px;
 }
 
 .home-content {
