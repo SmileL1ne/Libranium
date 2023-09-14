@@ -30,6 +30,10 @@ h1 {
     background-color: antiquewhite;
 }
 
+.book-category-item {
+    display: inline-block;
+}
+
 .home-content {
     justify-content: center;
 }
