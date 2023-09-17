@@ -24,6 +24,7 @@ h3 {
   cursor: pointer;
   background-color: wheat;
   margin-right: 100px;
+  padding: auto;
 }
 
 .navbar-content {
