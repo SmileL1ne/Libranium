@@ -4,29 +4,29 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <title>Libranium</title>
         <link rel="icon" type="image/x-icon" href="../resources/logo/favicon.ico">
+        <script src="https://kit.fontawesome.com/ff142c38be.js" crossorigin="anonymous"></script>
+        <title>Libranium</title>
     </head>
 
     <body>
-        <header>
+        <div class="header">
             <div class="logo">
                 <img src="../resources/logo/Librarium_logo.jpg" alt="Libranium logo" width="200">
             </div>
-            <div class="header-content">
-                <h1>Welcome to the Libranium - the world's best online Library!</h1>            
-            </div>
+            <h1>Welcome to the Libranium - the world's best online Library!</h1>            
             <div class="navbar">
-                <h3>Navbar: </h3>
-                <ul>
+                <h3>Navbar &#9662</h3>
+                <ul class="navbar-content">
                     <li><a href="../html/index.html">Home</a></li>
                     <li><a href="../html/users.html">People</a></li>
                     <li><a href="../html/mybooks.html">My Books</a></li>
                 </ul>
             </div>
-        </header>
+        </div>
 
         <br>
+        <hr>
         
         <div class="book-category-section">
             <div class ="book-category-section-header">
@@ -51,8 +51,36 @@
             </div>
         </div>
 
+        <div class="table-section">
+            <h2>All available books</h2>
+            <table class="all-books-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>War and Peace</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>1984</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Fight Club</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <div class="home-content">
-            
+            <br>
+            <hr>
+            <br>
             <div class="bottom-info">
                 <div class="home-about">
                     <h2>About us</h2>
@@ -63,16 +91,11 @@
                 <div class="home-links">
                     <h2>Contact with us!</h2>
                     <ol class="contacts">
-                        <ul class="footer-links">
-                            <li><a href="https://www.facebook.com/example" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://twitter.com/example" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com/example" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                          </ul>
-                          <ul class="footer-contact">
-                            <li>Телефон: +7 900 123 45 67</li>
-                            <li>Электронная почта: info@example.com</li>
-                            <li>Адрес: г. Москва, ул. Ленина, д. 123</li>
-                          </ul>
+                        <ul class="footer-contact">
+                            <li><i class="fa-solid fa-phone"></i>+7 900 123 45 67</li>
+                            <li><i class="fa-solid fa-envelope"></i>     info@example.com</li>
+                            <li><i class="fa-solid fa-location-dot"></i>    Expo 1C, Astana, Kazakhstan</li>
+                        </ul>
                         <ul class="social-icons">
                             <li><a class="social-icon-twitter" href="#" title="..." target="_blank" rel="noopener"></a></li>
                             <li><a class="social-icon-fb" href="#" title="..." target="_blank" rel="noopener"></a></li>
@@ -81,6 +104,7 @@
                             <li><a class="social-icon-youtube" href="#" title="..." target="_blank" rel="noopener"></a></li>
                           </ul>                         </div>
                       </div>
+                      <br>
                       <div class="copyright">
                         &copy; 2023 Example
                       </div>

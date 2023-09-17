@@ -1,29 +1,46 @@
-header {
+.header {
     display: flex;
     align-items: center;
     position: relative;
-    justify-content: center;
-    border: 1px solid black;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.logo {
+  margin-left: 100px;
 }
 
 h1 {
     text-align: center;
 }
 
-.logo {
-    flex: 0 0 auto;
-    margin-right: 20px;
-}
-
-.header-content {
-    float: 1;
-    
+h3 {
+  text-align: left;
 }
 
 .navbar {
-    position: absolute;
-    top: 0;
-    right: 0;
+  cursor: pointer;
+  background-color: wheat;
+  margin-right: 100px;
+}
+
+.navbar-content {
+  display: none;
+  position: absolute;
+  background-color: wheat;
+  min-width: 150px;
+  z-index: 1;
+  right: 0;
+}
+
+.navbar-content li {
+  padding: 10px;
+}
+
+.navbar:hover .navbar-content {
+  display: block;
 }
 
 .book-category-items-section{
@@ -35,6 +52,44 @@ h1 {
     margin: 20px;
 }
 
+.table-section {
+  padding: 30px 0 30px 0;
+}
+
+.all-books-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.all-books-table thead tr {
+  background-color: wheat;
+  color: black;
+  text-align: center;
+}
+
+.all-books-table th,
+.all-books-table td {
+  padding: 12px 15px;
+}
+
+.all-books-table tbody tr {
+  border-bottom: 1px solid wheat;
+}
+
+.all-books-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.all-books-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(245, 210, 145);
+}
+
 .home-content {
     justify-content: center;
 }
@@ -44,7 +99,10 @@ h1 {
     justify-content: center;
     left: 0;
     bottom: 0;
-    border: 1px solid black;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .home-about {
@@ -60,6 +118,14 @@ h1 {
 .contacts {
     font-size: 120%;
     list-style-position: inside;
+}
+
+.footer-contact {
+  list-style: none;
+}
+
+.footer-contact li i {
+  margin-right: 10px;
 }
 
 ol.contacts li {
