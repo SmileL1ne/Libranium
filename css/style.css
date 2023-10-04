@@ -1,3 +1,15 @@
+.navbar .navbar-brand {
+  color: wheat;
+  font-size: 24px;
+}
+
+
+.carousel-item {
+  width: 400px;
+}
+
+
+
 .header {
     display: flex;
     align-items: center;
@@ -21,47 +33,8 @@ h3 {
   text-align: left;
 }
 
-.navbar {
-  cursor: pointer;
-  background-color: wheat;
-  margin-right: 50px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 0 20px 0 20px;
-}
-
-.navbar-content {
-  display: none;
-  position: absolute;
-  background-color: wheat;
-  min-width: 160px;
-  left: 85%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  top: 59%;
-  text-align: left;  
-  list-style: none;
-}
-
-.navbar-content li i {
-  margin-right: 10px;
-}
-
-.navbar-content a {
-  text-decoration: none;
-  color: black;
-}
-
-.navbar-content li {
-  padding: 10px;
-}
-
-.navbar:hover .navbar-content {
-  display: block;
-}
-
 .book-category-items-section{
-    background-color: antiquewhite;
+    background-color: wheat;
 }
 
 .book-category-item {
@@ -99,8 +72,8 @@ h3 {
   border-bottom: 1px solid wheat;
 }
 
-.all-books-table tbody tr:nth-of-type(even) {
-  background-color: wheat;
+.all-books-table tbody tr:nth-of-type(odd) {
+  background-color: rgb(195, 227, 237);
 }
 
 .all-books-table tbody tr:last-of-type {
@@ -120,6 +93,7 @@ h3 {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(195, 227, 237);
 }
 
 .home-about {
@@ -238,3 +212,4 @@ hr {
 body {
   background-color: lightblue;
 }
+
