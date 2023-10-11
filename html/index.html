@@ -8,184 +8,206 @@
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <link rel="icon" type="image/x-icon" href="../resources/logo/favicon.ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <script src="https://kit.fontawesome.com/ff142c38be.js" crossorigin="anonymous"></script>
         <title>Libranium</title>
     </head>
+    <body style = "background-color: lightblue">
+    <style>
+        .about_us{
+            background-image:url("/resources/images/back.jpg");
+            background-size: cover;
+            height: 76vh;
+            background-position: center;
+        }
+         .banner{
+             background-image: url("/resources/images/back2.jpg");
+             background-size: cover;
+             height: 93vh;
+             background-position: center;
+         }
+        h3 {
+            text-align: center;
+        }
 
-    <body>
-        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><i class="fa-solid fa-book"></i> Libranium</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a href="#" class="nav-link active">
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="#" class="nav-link">
-                                Page 2
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="../html/test.html" class="nav-link">
-                                Test
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="../html/book.html" class="nav-link">
-                                Book Page
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
-        <div class="main container">
-            <div id="popular-books" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../resources/images/1339600_550.jpg" class="d-block w-100 h-100" alt="books-capital">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../resources/images/1984.jpg" class="d-block w-100 h-100" alt="books-1984">
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#popular-books" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+    </style>
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-book"></i> Libranium</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#popular-books" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-        </div>
-
-        <!-- <div class="header">
-            <div class="logo">
-                <img src="../resources/logo/Librarium_logo.jpg" alt="Libranium logo" width="200">
-            </div>
-            <h1>Welcome to the Libranium - the world's best online Library!</h1>
-            <div class="navbar">
-                <h3>Navbar &#9662</h3>
-                <ul class="navbar-content">
-                    <li><a href="../html/index.html"></a><small><i class="fa-solid fa-house"></i></small><b>Home</b></li>
-                    <li><a href="../html/users.html"></a><small><i class="fa-solid fa-user-group"></i></small><b>People</b></li>
-                    <li><a href="../html/mybooks.html"></a><small><i class="fa-solid fa-book-open"></i></small><b>My Books</b></li>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../html/test.html" class="nav-link">
+                            Test
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../html/book.html" class="nav-link">
+                            Book Page
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
+    </nav>
 
-        <br>
-        <hr>
-        
-       <div class="book-category-section">
-            <div class ="book-category-section-header">
-                <h2>Classic</h2>
+    <section class="banner container-fluid">
+        <div class="banner-content text-center d-block align-items-center justify-content-center py-5">
+            <h1 class = "pt-5">Welcome to Our Online Store</h1>
+            <p class = "fs-5 pt-5">Discover the latest products and enjoy exclusive offers.</p>
+            <a href="#" style="color:wheat" class="btn btn-dark">Shop Now</a>
+        </div>
+        <div class="col-md-12 container-fluid">
+            <img class="img-fluid" src="/resources/logo/Librarium_logo.jpg" alt="lib-logo" style="height: 480px; width: 350; padding-bottom: 100px;">
+        </div>
+    </section>
+
+
+    <main class="container my-5">
+        <section class="collections py-5">
+            <div class="container text-center">
+                <h2>Explore Our Collections</h2>
+                <p class ="fs-5">Welcome to our diverse collection of books. Whether you're a fiction enthusiast or seeking knowledge in non-fiction, we have something for everyone.</p>
+
+                <div class="row my-5">
+                    <div class="col-md-4">
+                        <h3>Fiction</h3>
+                            <img class="img-fluid" src="/resources/images/1984.jpg" style="height: 500px; width: 333px" alt="Fiction Collection">
+                            <p class = "fs-5 my-3">Immerse yourself in captivating stories and fictional worlds with our extensive fiction collection.</p>
+                            <button type="button" class="btn btn-dark"><a href="#" style="text-decoration: none; color:wheat">Browse Fiction</a></button>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Non-Fiction</h3>
+                            <img class="img-fluid" src="/resources/images/voina_i_mir.jpg" style="height: 500px; width: 333px" alt="Non-Fiction Collection">
+                            <p class = "fs-5 my-3">Expand your knowledge with our diverse non-fiction collection covering a wide range of topics.</p>
+                            <button type="button" class="btn btn-dark"><a href="#" style="text-decoration: none; color:wheat">Browse Non-Fiction</a></button>
+
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Scientific</h3>
+                        <img class="img-fluid" src="/resources/images/Хокниг.jpg" style="height: 500px; width: 333px" alt="Science Collection">
+                            <p class = "fs-5 my-3">Explore the world of science through our diverse collection of books, covering a wide range of topics and discoveries.</p>
+                            <button type="button" class="btn btn-dark"><a href="#" style="text-decoration: none; color:wheat">Browse Romance</a></button>
+                    </div>
+                </div>
             </div>
-            <div class="book-category-items-section">
-                <div class="book-category-item">
-                    <div class="book-cover">
-                        <img src="../resources/images/Фёдор.jpg" alt="Фёдор" height="250">
+        </section>
+
+
+        <section class="pb-5">
+            <div class="container text-center">
+                <h2>Why Choose Us?</h2>
+                <div class="row mt-5">
+                    <div class="col-lg-4">
+                        <div class="choose-us-item">
+                            <i class="fas fa-check-circle fa-lg mb-4"></i>
+                            <h3>Wide Selection</h3>
+                            <p>We curate a diverse selection of books to cater to all tastes and interests.</p>
+                        </div>
                     </div>
-                </div> 
-                <div class="book-category-item">
-                    <div class="book-cover">
-                        <img src="../resources/images/1339600_550.jpg" alt="1339600_550" height="250">
+                    <div class="col-lg-4">
+                        <div class="choose-us-item">
+                            <i class="fas fa-clock fa-lg mb-4"></i>
+                            <h3>Convenience</h3>
+                            <p>Shop from the comfort of your home, 24/7, and have your favorite books delivered to your doorstep.</p>
+                        </div>
                     </div>
-                </div>  
-            <div class="book-category-items-section">
-                <div class="book-category-item">
-                    <div class="book-cover">
-                        <img src="../resources/images/voina_i_mir.jpg" alt="voina_i_mir" height="250">
-                    </div>
-                </div>
-                <div class="book-category-item">
-                    <div class="book-cover">
-                        <img src="../resources/images/1984.jpg" alt="1984" height="250">
-                    </div>
-                </div>
-                <div class="book-category-item">
-                    <div class="book-cover">
-                        <img src="../resources/images/Абай.jpg" alt="Абай" height="250">
-                    </div>
-                </div>
-                <div class="book-category-item">
-                    <div class="book-cover">
-                        <img src="../resources/images/boitsovskiy_klub.jpg" alt="voina_i_mir" height="250">
+                    <div class="col-lg-4">
+                        <div class="choose-us-item">
+                            <i class="fas fa-star fa-lg mb-4"></i>
+                            <h3>Quality</h3>
+                            <p>We prioritize high-quality print and digital editions to ensure your reading experience is exceptional.</p>
+                        </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="choose-us-item">
+                            <i class="fas fa-users fa-lg mb-4"></i>
+                            <h3>Expert Recommendations</h3>
+                            <p>Our team of literary enthusiasts handpicks books and provides insightful recommendations.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="choose-us-item">
+                            <i class="fas fa-dollar-sign fa-lg mb-4"></i>
+                            <h3>Competitive Pricing</h3>
+                            <p>Enjoy competitive prices and regular discounts on your favorite titles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <div class="about_us container-fluid d-flex justify-content-center">
+            <div style="border-radius: 20px; background-color: #f6e9d1" class = "d-block text-center justify-content-center w-50 mt-5 mb-5 pt-5">
+                <h1>About Us</h1>
+                <p class = "fs-4">We are open source library where everyone can borrow and read desired book or even several of them
+                    just as our slogan says - just borrow, read and enjoy!
+                </p>
+            </div>
+    </div>
+    <footer class="bg-dark text-white">
+        <div class="container">
+            <div class="row pt-4">
+                <div class="col-md-4">
+                    <h3>Contact Information</h3>
+                    <p><i class = "bi bi-envelope"></i> Email: example@example.com</p>
+                    <p><i class = "bi bi-telephone"></i> Phone: +7 900 123 45 67</p>
+                    <ul class="d-flex list-unstyled justify-content-start gap-5 justify-content-center">
+                        <li><a href="#" title="..."><i class="bi bi-twitter text-white"></i></a></li>
+                        <li><a href="#" title="..."><i class="bi bi-facebook text-white"></i></a></li>
+                        <li><a href="#" title="..."><i class="bi bi-telegram text-white"></i></a></li>
+                        <li><a href="#" title="..."><i class="bi bi-youtube text-white"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a class = "text-decoration-none text-white" href="#">Home</a></li>
+                        <li><a class = "text-decoration-none text-white" href="#">About Us</a></li>
+                        <li><a class = "text-decoration-none text-white" href="#">Test</a></li>
+                        <li><a class = "text-decoration-none text-white" href="#">Book Page</a></li>
+                    </ul>
+
+                </div>
+                <div class="col-md-4">
+                    <h3>Additional Information</h3>
+                    <table style="background-color: #f6e9d1;" class="table table-borderless table-dark footer-table">
+                        <tbody>
+                        <tr>
+                            <th scope="row">Address</th>
+                            <td>Expo 1C, Astana, Kazakhstan</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Hours</th>
+                            <td>Mon-Fri: 9 AM - 5 PM</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p> &copy; 2023 Booky-booky</p>
             </div>
         </div>
+    </footer>
 
-        <div class="table-section">
-            <h2>All available books</h2>
-            <table class="all-books-table">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>War and Peace</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>1984</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Fight Club</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="home-content">
-            <br>
-            <hr>
-            <br>
-            <div class="bottom-info">
-                <div class="home-about">
-                    <h2>About us</h2>
-                    <h3>We are open source library where everyone can borrow and read desired book or even several of them
-                        just as our slogan says - just borrow, read and enjoy!
-                    </h3>
-                </div>
-                <div class="home-links">
-                    <h2>Contact with us!</h2>
-                    <ol class="contacts">
-                        <ul class="footer-contact">
-                            <li><i class="fa-solid fa-phone"></i>+7 900 123 45 67</li>
-                            <li><i class="fa-solid fa-envelope"></i>     info@example.com</li>
-                            <li><i class="fa-solid fa-location-dot"></i>    Expo 1C, Astana, Kazakhstan</li>
-                        </ul>
-                        <ul class="social-icons">
-                            <li><a class="social-icon-twitter" href="#" title="..." target="_blank" rel="noopener"></a></li>
-                            <li><a class="social-icon-fb" href="#" title="..." target="_blank" rel="noopener"></a></li>
-                            <li><a class="social-icon-vk" href="#" title="..." target="_blank" rel="noopener"></a></li>
-                            <li><a class="social-icon-telegram" href="#" title="..." target="_blank" rel="noopener"></a></li>
-                            <li><a class="social-icon-youtube" href="#" title="..." target="_blank" rel="noopener"></a></li>
-                          </ul>                         </div>
-                      </div>
-                      <br>
-                      <div class="copyright">
-                        &copy; 2023 Booky-booky
-                      </div>
-                    </div>
-                    </ol>
-                </div>
-            </div>
-        </div> -->
 
     </body>
 </html>
