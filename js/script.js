@@ -32,7 +32,9 @@ function displayGenre(genre) {
 const books = [
     { title: "War and Peace", author: "Lev Tolstoy" },
     { title: "Brief History of Time", author: "Stephen Hawking" },
-    { title: "1984", author: "John Orwell" }
+    { title: "1984", author: "George Orwell" },
+    { title: "Fight Club", author: "Chuck Palahniuk" },
+    { title: "Capital", author: "Karl Marx"}
 ];
 
 let booksVisible = false;
