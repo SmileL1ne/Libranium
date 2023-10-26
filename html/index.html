@@ -111,6 +111,17 @@
                     <button type="button" class="btn btn-warning btn-lg mb-4" id="showAllBooks">Show list of all books</button>
                     <ul class="list-group" id="booksList"></ul>
                 </div>
+
+                <h2 class="mb-5 mt-5"><b>Other books available</b></h2>
+                <div id="slider-container">
+                    <div id="slider-container-inner">
+                        <div id="slider" style="position: relative; width: 333px; height: 500px; justify-content: center;">
+                            <img src="../resources/images/Абай.jpg" alt="Image 1" style="width: 333px; height: 500px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+                <button id="prevButton" type="button" class="btn btn-primary mt-5 mx-5 mb-5">Previous</button>
+                <button id="nextButton" type="button" class="btn btn-primary me-5">Next</button>
             </section>
 
 
@@ -157,6 +168,36 @@
                         </div>
                     </div>
                 </div>
+
+                <form class="mt-5" id="validationForm">
+                    <h2>Get fresh news in your email!</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                          <label for="inputEmail" class="form-label mt-3"><b>Email address</b></label>
+                          <input type="email" class="form-control " id="inputEmail" aria-describedby="emailAim">
+                          <div id="emailAim" class="form-text">This email will validate your account</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                          <label for="inputPassword" class="form-label"><b>Password</b></label>
+                          <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1"><b>I confirm that information above can be used in data processing by the terms of this site</b></label>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="submit" class="col-md-1 btn btn-primary">Submit</button>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div id="error" class="error-message"></div>
+                        <div id="confirmation" class="alert alert-success col-md-4 mt-4" role="alert" style="display: none;"></div>
+                    </div>
+                </form>
             </section>
 
 
@@ -164,12 +205,15 @@
         </main>
 
         <div class="about_us container-fluid d-flex justify-content-center">
-                <div style="border-radius: 20px; background-color: #f6e9d1" class = "d-block text-center justify-content-center w-50 mt-5 mb-5 pt-5">
-                    <h1>About Us</h1>
-                    <p class = "fs-4">We are open source library where everyone can borrow and read desired book or even several of them
-                        just as our slogan says - just borrow, read and enjoy!
-                    </p>
-                </div>
+            <div style="border-radius: 20px; background-color: #f6e9d1" class = "d-block text-center justify-content-center w-50 mt-5 mb-5 pt-5">
+                <h1>About Us</h1>
+                <p class = "fs-4 mb-5">We are open source library where everyone can borrow and read desired book or even several of them
+                    just as our slogan says - just borrow, read and enjoy!
+                </p>
+                <h1 class="mt-5">Countdown Timer</h1>
+                <p id="countdown">Time remaining: <span id="timer">10</span> seconds</p>
+                <button id="startButton" type="button" class="btn btn-primary">Start Countdown</button>
+            </div>
         </div>
         <footer class="bg-dark text-white">
             <div class="container">
@@ -215,5 +259,22 @@
             </div>
         </footer>
         <script src="../js/script.js"></script>
+
+        <style>
+            #slider-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 500px; /* Set the desired height for the container */
+            }
+        
+            #slider-container-inner {
+                width: 333px; /* Set the desired width for the slider */
+                height: 500px; /* Set the desired height for the slider */
+                overflow: hidden;
+                position: relative;
+            }
+
+        </style>        
     </body>
 </html>
