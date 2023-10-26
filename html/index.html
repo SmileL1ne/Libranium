@@ -29,7 +29,6 @@
             h3 {
                 text-align: center;
             }
-
         </style>
         <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
@@ -71,7 +70,7 @@
                 <a href="#" style="color:wheat" class="btn btn-dark" id="greetShopping">Shop Now</a>
             </div>
             <div class="col-md-12 container-fluid">
-                <img class="img-fluid" src="/resources/logo/Librarium_logo.jpg" alt="lib-logo" style="height: 480px; width: 350; padding-bottom: 100px;">
+                <img class="img-fluid" src="../resources/logo/Librarium_logo.jpg" alt="lib-logo" style="height: 480px; width: 350; padding-bottom: 100px;">
             </div>
         </section>
 
@@ -87,20 +86,20 @@
                     <div class="row my-5">
                         <div class="col-md-4">
                             <h3>Fiction</h3>
-                                <img class="img-fluid" src="/resources/images/1984.jpg" style="height: 500px; width: 333px" alt="Fiction Collection">
+                                <img id="img1" class="img-fluid" src="../resources/images/1984.jpg" style="height: 500px; width: 333px" alt="Fiction Collection">
                                 <p class = "fs-5 my-3">Immerse yourself in captivating stories and fictional worlds with our extensive fiction collection.</p>
                                 <button type="button" class="btn btn-dark"><a href="#" style="text-decoration: none; color:wheat">Browse Fiction</a></button>
                         </div>
                         <div class="col-md-4">
                             <h3>Non-Fiction</h3>
-                                <img class="img-fluid" src="/resources/images/voina_i_mir.jpg" style="height: 500px; width: 333px" alt="Non-Fiction Collection">
+                                <img id="img2" class="img-fluid" src="../resources/images/voina_i_mir.jpg" style="height: 500px; width: 333px" alt="Non-Fiction Collection">
                                 <p class = "fs-5 my-3">Expand your knowledge with our diverse non-fiction collection covering a wide range of topics.</p>
                                 <button type="button" class="btn btn-dark"><a href="#" style="text-decoration: none; color:wheat">Browse Non-Fiction</a></button>
 
                         </div>
                         <div class="col-md-4">
                             <h3>Scientific</h3>
-                            <img class="img-fluid" src="/resources/images/Хокниг.jpg" style="height: 500px; width: 333px" alt="Science Collection">
+                            <img id="img3" class="img-fluid" src="../resources/images/Хокниг.jpg" style="height: 500px; width: 333px" alt="Science Collection">
                                 <p class = "fs-5 my-3">Explore the world of science through our diverse collection of books, covering a wide range of topics and discoveries.</p>
                                 <button type="button" class="btn btn-dark"><a href="#" style="text-decoration: none; color:wheat">Browse Romance</a></button>
                         </div>
@@ -109,10 +108,20 @@
 
                 <div class="container text-center mb-3 mt-5">
                     <button type="button" class="btn btn-warning btn-lg mb-4" id="showAllBooks">Show list of all books</button>
-                    <ul class="list-group" id="booksList"></ul>
+                    <ul class="list-group text-decoration-none" id="booksList"></ul>
                 </div>
-            </section>
 
+                <h2 class="mb-5 mt-5"><b>Other books available</b></h2>
+                <div id="slider-container">
+                    <div id="slider-container-inner">
+                        <div id="slider" style="position: relative; width: 333px; height: 500px; justify-content: center;">
+                            <img src="../resources/images/Абай.jpg" alt="Image 1" style="width: 333px; height: 500px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+                <button id="prevButton" type="button" class="btn btn-primary mt-5 mx-5 mb-5">Previous</button>
+                <button id="nextButton" type="button" class="btn btn-primary me-5">Next</button>
+            </section>
 
             <section class="pb-5">
                 <div class="container text-center">
@@ -157,6 +166,36 @@
                         </div>
                     </div>
                 </div>
+
+                <form class="mt-5" id="validationForm">
+                    <h2>Get fresh news in your email!</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                          <label for="inputEmail" class="form-label mt-3"><b>Email address</b></label>
+                          <input type="email" class="form-control " id="inputEmail" aria-describedby="emailAim">
+                          <div id="emailAim" class="form-text">This email will validate your account</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                          <label for="inputPassword" class="form-label"><b>Password</b></label>
+                          <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1"><b>I confirm that information above can be used in data processing by the terms of this site</b></label>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="submit" class="col-md-1 btn btn-primary">Submit</button>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div id="error" class="error-message"></div>
+                        <div id="confirmation" class="alert alert-success col-md-4 mt-4" role="alert" style="display: none;"></div>
+                    </div>
+                </form>
             </section>
 
 
@@ -164,12 +203,15 @@
         </main>
 
         <div class="about_us container-fluid d-flex justify-content-center">
-                <div style="border-radius: 20px; background-color: #f6e9d1" class = "d-block text-center justify-content-center w-50 mt-5 mb-5 pt-5">
-                    <h1>About Us</h1>
-                    <p class = "fs-4">We are open source library where everyone can borrow and read desired book or even several of them
-                        just as our slogan says - just borrow, read and enjoy!
-                    </p>
-                </div>
+            <div style="border-radius: 20px; background-color: #f6e9d1" class = "d-block text-center justify-content-center w-50 mt-5 mb-5 pt-5">
+                <h1>About Us</h1>
+                <p class = "fs-4 mb-5">We are open source library where everyone can borrow and read desired book or even several of them
+                    just as our slogan says - just borrow, read and enjoy!
+                </p>
+                <h1 class="mt-5">Countdown Timer</h1>
+                <p id="countdown">Time remaining: <span id="timer">10</span> seconds</p>
+                <button id="startButton" type="button" class="btn btn-primary">Start Countdown</button>
+            </div>
         </div>
         <footer class="bg-dark text-white">
             <div class="container">
@@ -215,5 +257,22 @@
             </div>
         </footer>
         <script src="../js/script.js"></script>
+
+        <style>
+            #slider-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 500px; /* Set the desired height for the container */
+            }
+        
+            #slider-container-inner {
+                width: 333px; /* Set the desired width for the slider */
+                height: 500px; /* Set the desired height for the slider */
+                overflow: hidden;
+                position: relative;
+            }
+
+        </style>        
     </body>
 </html>

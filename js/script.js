@@ -32,22 +32,162 @@ function displayGenre(genre) {
 const books = [
     { title: "War and Peace", author: "Lev Tolstoy" },
     { title: "Brief History of Time", author: "Stephen Hawking" },
-    { title: "1984", author: "John Orwell" }
+    { title: "1984", author: "George Orwell" },
+    { title: "Fight Club", author: "Chuck Palahniuk" },
+    { title: "Capital", author: "Karl Marx"}
 ];
+
+let booksVisible = false;
 
 function displayAllBooks() {  
     const bookList = document.getElementById("booksList");
 
-    books.forEach((book) => {
-        const listItem = document.createElement("li");
-        listItem.className = "list-group-item list-group-item-warning";
-        listItem.textContent = `Title: ${book.title}, Author: ${book.author}`;
-        bookList.appendChild(listItem);
-    });
+    if (booksVisible) {
+        bookList.innerHTML = "";
+        booksVisible = false;
+    } else {
+
+        books.forEach((book, index) => {
+            const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = `../html/book.html?index=${index}`; 
+            link.textContent = `Title: ${book.title}, Author: ${book.author}`;
+            listItem.className = "list-group-item list-group-item-warning";
+            link.style.textDecoration = "none"; 
+            link.style.color = "black";
+            listItem.appendChild(link);
+            bookList.appendChild(listItem);
+        });
+
+        booksVisible = true;
+    }
 }
+
+function validateForm(event) {
+    const email = document.getElementById("inputEmail").value;
+    console.log(email)
+    const password = document.getElementById("inputPassword").value;
+    const errorDiv = document.getElementById("error");
+    const successDiv = document.getElementById("confirmation");
+    errorDiv.innerHTML = "";
+ 
+    if (email === "" || password === "") {
+        errorDiv.innerHTML = "Both name and email are required fields";
+        event.preventDefault();
+    } else if (!isValidEmail(email)) {
+        errorDiv.innerHTML = "Please enter a valid email address";
+        event.preventDefault();
+    } else if (!isValidPassword(password)) {
+        errorDiv.innerHTML = "Please enter a valid password (8 characters min)";
+        event.preventDefault();
+    } else {
+        const form = document.getElementById("validationForm");
+        form.reset();
+        successDiv.style.display = "block";
+        successDiv.style.fontSize = "20px";
+        successDiv.textContent = "Wait for news in your email!";
+        event.preventDefault();
+    }
+}
+
+function isValidEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9-_.]+@(?:[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,4})$/;
+    return emailPattern.test(email);
+}
+
+function isValidPassword(password) {
+    const minLength = 8;
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const digitRegex = /[0-9]/;
+    const specialCharRegex = /[$%#*?!^&@]/;
+
+    if (password.length < minLength ||
+        !uppercaseRegex.test(password) ||
+        !lowercaseRegex.test(password) ||
+        !digitRegex.test(password) ||
+        !specialCharRegex.test(password)
+    ) {
+        return false
+    } else {
+        return true
+    }
+}
+
+const images = ["../resources/images/Абай.jpg", "../resources/images/Фёдор.jpg", "../resources/images/boitsovskiy_klub.jpg"];
+let currentIndex = 0;
+const slider = document.getElementById("slider");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
+
+function updateSlider() {
+    slider.innerHTML = `<img src="${images[currentIndex]}" alt="Image" style="width: 333px; height: 500px; object-fit: cover;">`;
+}
+
+prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateSlider();
+});
+
+nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateSlider();
+});
+
+updateSlider();
+
+function startCountdown(timerValue) {
+    let countdownInterval;
+
+    function updateTimer() {
+        const timerElement = document.getElementById("timer");
+        timerElement.textContent = timerValue;
+    }
+
+    function countdownLogic() {
+        timerValue--;
+        updateTimer();
+
+        if (timerValue === 0) {
+            clearInterval(countdownInterval);
+            countdownInterval = null;
+            timerValue = 10;
+            alert("Countdown complete!")
+        }
+    }
+
+    document.getElementById("startButton").addEventListener("click", function () {
+        if (!countdownInterval) {
+            countdownInterval = setInterval(countdownLogic, 1000);
+        }
+    });
+    timerValue = 10;
+}
+startCountdown(10);
 
 document.getElementById("greetShopping").addEventListener("click", sayGoodLuck);
 document.getElementById("getFavoriteGenre").addEventListener("click", showBookTest);
 document.getElementById("showAllBooks").addEventListener("click", displayAllBooks);
+document.getElementById("validationForm").addEventListener("submit", validateForm);
+
+// diff seciton Batyrkhan
+
+img1 = document.getElementById("img1");
+img1.addEventListener("click", function(){
+    destinationURL = "../html/book.html?index=2";
+    window.location.href = destinationURL;
+});
+
+img2 = document.getElementById("img2");
+img2.addEventListener("click", function(){
+    destinationURL = "../html/book.html?index=0";
+    window.location.href = destinationURL;
+});
+
+img3 = document.getElementById("img3");
+img3.addEventListener("click", function(){
+    destinationURL = "../html/book.html?index=1";
+    window.location.href = destinationURL;
+});
 
   
