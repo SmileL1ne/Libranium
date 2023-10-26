@@ -163,4 +163,24 @@ document.getElementById("getFavoriteGenre").addEventListener("click", showBookTe
 document.getElementById("showAllBooks").addEventListener("click", displayAllBooks);
 document.getElementById("validationForm").addEventListener("submit", validateForm);
 
+// diff seciton Batyrkhan
+
+img1 = document.getElementById("img1");
+img1.addEventListener("click", function(){
+    destinationURL = "../html/book.html?index=2";
+    window.location.href = destinationURL;
+});
+
+img2 = document.getElementById("img2");
+img2.addEventListener("click", function(){
+    destinationURL = "../html/book.html?index=0";
+    window.location.href = destinationURL;
+});
+
+img3 = document.getElementById("img3");
+img3.addEventListener("click", function(){
+    destinationURL = "../html/book.html?index=1";
+    window.location.href = destinationURL;
+});
+
   

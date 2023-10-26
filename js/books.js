@@ -111,3 +111,8 @@ function countdown() {
 window.addEventListener("load", function () {
     countdownInterval = setInterval(countdown, 1000);
 });
+
+function redirectToRead(){
+    readURL = "https://uzts.uz/wp-content/uploads/2020/08/tolstojvojnaimirtom_1_2..pdf";
+    window.location.href = readURL;
+}
