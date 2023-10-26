@@ -46,12 +46,19 @@ function displayAllBooks() {
         bookList.innerHTML = "";
         booksVisible = false;
     } else {
-        books.forEach((book) => {
+
+        books.forEach((book, index) => {
             const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = `../html/book.html?index=${index}`; 
+            link.textContent = `Title: ${book.title}, Author: ${book.author}`;
             listItem.className = "list-group-item list-group-item-warning";
-            listItem.textContent = `Title: ${book.title}, Author: ${book.author}`;
+            link.style.textDecoration = "none"; 
+            link.style.color = "black";
+            listItem.appendChild(link);
             bookList.appendChild(listItem);
         });
+
         booksVisible = true;
     }
 }
