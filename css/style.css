@@ -8,7 +8,9 @@
   width: 400px;
 }
 
-
+#favoriteGenre {
+  display: none;
+}
 
 .header {
     display: flex;
