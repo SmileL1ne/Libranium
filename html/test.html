@@ -4,6 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест на жанр книги</title>
+    <style>
+      #test div {
+        margin-bottom: 30px;
+      }
+      .correct {
+        border: 1px solid green;
+      }
+      .incorrect {
+        border: 1px solid red;
+      }
+      .correct::after {
+        content: "✔"; /* Добавляем зеленый кружок для правильных ответов */
+        color: green;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <nav class="navbar d-flex navbar-expand-lg navbar-light justify-content-center mx-3 mt-3 rounded-3 shadow" style="background-color: rgb(195, 227, 237);" >
       <a class="navbar-brand ms-5" href="#">
@@ -26,7 +43,7 @@
   </div>
   </nav>
   <div class="mx-auto p-2" style="width: 170px;">
-    <h1>Тест</h1>
+    <h1>Quizes</h1>
   </div>
     <div class="navbar">
       <div class="row">
@@ -34,159 +51,133 @@
         <div class="col-md-6">
         </head>
         <body style="background-color: lightblue;">
-          <!-- Тест -->
-          <div class="mx-auto p-2" style="width: 1000px;">
-            <h1>Тест на жанр книги</h1>
-            <form id="quiz">
-              <div class="form-group">
-                <label for="question1">Вопрос 1: Какой жанр книг вы предпочитаете?</label>
-                <select class="form-control" id="question1">
-                  <option>Фантастика</option>
-                  <option>Детектив</option>
-                  <option>Роман</option>
-                  <option>Приключения</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="question2">Вопрос 2: Какой автор вам нравится больше всего?</label>
-                <select class="form-control" id="question2">
-                  <option>Стругацкие</option>
-                  <option>Достоевский</option>
-                  <option>Толстой</option>
-                  <option>Кинг</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="question3">Вопрос 3: Какой сюжет вам интересен?</label>
-                <select class="form-control" id="question3">
-                  <option>Фантастический</option>
-                  <option>Криминальный</option>
-                  <option>Романтический</option>
-                  <option>Приключенческий</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="question4">Вопрос 4: Какой период истории вам интересен?</label>
-                <select class="form-control" id="question4">
-                  <option>Древний мир</option>
-                  <option>Средневековье</option>
-                  <option>Новое время</option>
-                  <option>Современность</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="question5">Вопрос 5: Какой главный герой вам нравится?</label>
-                <select class="form-control" id="question5">
-                  <option>Герой-одиночка</option>
-                  <option>Герой-любовник</option>
-                  <option>Герой-приключенец</option>
-                  <option>Герой-мыслитель</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="question6">Вопрос 6: Какой язык вы предпочитаете читать?</label>
-                <select class="form-control" id="question6">
-                  <option>Русский</option>
-                  <option>Английский</option>
-                  <option>Французский</option>
-                  <option>Испанский</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="question7">Вопрос 7: Какой жанр фильмов вы предпочитаете?</label>
-                <select class="form-control" id="question7">
-                  <option>Фантастика</option>
-                  <option>Детектив</option>
-                  <option>Романтика</option>
-                  <option>Боевик</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="question8">Вопрос 8: Какой жанр музыки вы предпочитаете?</label>
-                <select class="form-control" id="question8">
-                  <option>Рок</option>
-                  <option>Поп</option>
-                  <option>Классика</option>
-                  <option>Джаз</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="question9">Вопрос 9: Какой персонаж вам нравится?</label>
-                <select class="form-control" id="question9">
-                  <option>Волшебник</option>
-                  <option>Дракон</option>
-                  <option>Рыцарь</option>
-                  <option>Принцесса</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="question10">Вопрос 10: Какой жанр игр вы предпочитаете?</label>
-                <select class="form-control" id="question10">
-                  <option>Ролевые игры</option>
-                  <option>Шутеры</option>
-                  <option>Стратегии</option>
-                  <option>Гонки</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary">Узнать любимый жанр книги</button>
-            </form>
-            <div id="result" style="display: none;">
-              <h2>Ваш любимый жанр книги:</h2>
-              <h3 id="genre"></h3>
-            </div>
-          </div>
-          <script
-            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"
-          ></script>
-          <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper-base.min.js"
-            integrity="sha384-+5vZJZJ4L5JqJ7Y5XJ5J5JzZjz8zQ2KJ5JzJzZJzJzZJzZJzJzJzZJzZJzZJzJ"
-            crossorigin="anonymous"
-          ></script>
-          <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"
-          ></script>
-          <script>
-            $(function () {
-              $('#quiz').submit(function (event) {
-                event.preventDefault();
-                var question1 = $('#question1').val();
-                var question2 = $('#question2').val();
-                var question3 = $('#question3').val();
-                var question4 = $('#question4').val();
-                var question5 = $('#question5').val();
-                var question6 = $('#question6').val();
-                var question7 = $('#question7').val();
-                var question8 = $('#question8').val();
-                var question9 = $('#question9').val();
-                var question10 = $('#question10').val();
-                var genre;
-                if (question1 === 'Фантастика' || question2 === 'Кинг' || question3 === 'Фантастический') {
-                  genre = 'Научная фантастика';
-                } else if (question1 === 'Детектив' || question2 === 'Достоевский' || question3 === 'Криминальный') {
-                  genre = 'Детектив';
-                } else if (question1 === 'Роман' || question2 === 'Толстой' || question3 === 'Романтический') {
-                  genre = 'Роман';
-                } else if (question1 === 'Приключения' || question2 === 'Стругацкие' || question3 === 'Приключенческий') {
-                  genre = 'Приключения';
-                } else {
-                  genre = 'Не удалось определить ваш любимый жанр книг';
-                }
-                $('#genre').text(genre);
-                $('#result').show();
-              });
-            });
-          </script>
+
+<script>
+  // Display Simple Alert Messages and Prompts
+  alert("This is a simple alert message.");
+  var userResponse = prompt("Please enter your name:");
+  alert("Hello, " + userResponse + "!");
+
+</script>
+<form>
+  <label>
+    Name:
+    <input type="text" id="nameInput">
+  </label>
+  <br>
+  <label>
+    Email:
+    <input type="email" id="emailInput">
+  </label>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+<script>
+  const form = document.querySelector("form");
+  const nameInput = document.getElementById("nameInput");
+  const emailInput = document.getElementById("emailInput");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (nameInput.value === "") {
+      alert("Please enter your name.");
+      nameInput.classList.add("incorrect");
+      return;
+    } else {
+      nameInput.classList.remove("incorrect");
+      nameInput.classList.add("correct");
+    }
+
+    if (emailInput.value === "") {
+      alert("Please enter your email.");
+      emailInput.classList.add("incorrect");
+      return;
+    } else {
+      emailInput.classList.remove("incorrect");
+      emailInput.classList.add("correct");
+    }
+
+    alert("Form submitted successfully!");
+  });
+</script>
+<div id="test"></div>
+<button id="button">Check</button>
+
+<script>
+  let test = document.querySelector('#test');
+  let questions = [
+    {
+      question: "Who is the author of the book '1984'?",
+      options: ["George Orwell", "Jane Austen", "Charles Dickens"],
+      correctAnswer: "George Orwell",
+    },
+    {
+      question: "When was the book '1984' written?",
+      options: ["1949", "1935", "1957"],
+      correctAnswer: "1949",
+    },
+    {
+      question: "Who translated the book into the Russian edition?",
+      options: ["Ivan Ivanov", "Maria Petrova", "John Smith"],
+      correctAnswer: "Ivan Ivanov",
+    },
+    {
+      question: "When was the book translated into the Russian edition?",
+      options: ["1960", "1975", "1982"],
+      correctAnswer: "1960",
+    },
+    {
+      question: "What is the name of the country in the book?",
+      options: ["Oceania", "Eurasia", "Eastasia"],
+      correctAnswer: "Oceania",
+    },
+  ];
+
+  for (let i = 0; i < questions.length; i++) {
+    let div = document.createElement('div');
+    test.appendChild(div);
+
+    let p = document.createElement('p');
+    p.innerHTML = questions[i].question;
+    div.appendChild(p);
+
+    for (let j = 0; j < questions[i].options.length; j++) {
+      let option = questions[i].options[j];
+      let label = document.createElement('label');
+      let radio = document.createElement('input');
+      radio.type = "radio";
+      radio.name = "question" + i;
+      radio.value = option;
+      label.appendChild(radio);
+      label.appendChild(document.createTextNode(option));
+      div.appendChild(label);
+    }
+  }
+
+  let button = document.querySelector('#button');
+  button.addEventListener('click', function() {
+    let inputs = document.querySelectorAll("#test input[type='radio']:checked");
+    for (let input of inputs) {
+      let questionIndex = input.name.replace("question", "");
+      let selectedOption = input.value;
+      let correctAnswer = questions[questionIndex].correctAnswer;
+      if (selectedOption === correctAnswer) {
+        input.classList.add('correct');
+      } else {
+        input.classList.add('incorrect');
+      }
+    }
+    let correctCount = document.querySelectorAll("#test input.correct").length;
+    alert("You answered " + correctCount + " out of " + questions.length + " questions correctly.");
+  });
+</script>
+
+
         </div>
         <div class="col-md-3"></div>
       </div>
     </div>
-
-    <!-- Remove the container if you want to extend the Footer to full width. -->
 <div class="container my-5">
 
   <footer class="bg-primary text-center text-lg-start text-white">
