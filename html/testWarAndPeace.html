@@ -36,13 +36,13 @@
         content: "✔"; 
         color: green;
         font-weight: bold;
-        margin-left: -50px; /* Уменьшаем отступ между значком и ответами */
+        margin-left: -45px; /* Уменьшаем отступ между значком и ответами */
       }
       .incorrect::after {
         content: "❌"; 
         color: red;
         font-weight: bold;
-        margin-left: -50px; /* Уменьшаем отступ между значком и ответами */
+        margin-left: -45px; /* Уменьшаем отступ между значком и ответами */
       }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
@@ -83,29 +83,29 @@
   let test = document.querySelector('#test');
   let questions = [
     {
-      question: "Who is the author of the book '1984'?",
-      options: ["George Orwell", "Jane Austen", "Charles Dickens"],
-      correctAnswer: "George Orwell",
+      question: "Which of the following characters is one of the main characters in War and Peace?",
+      options: ["Konstantin Levin", " Anna Karenina", "Andrey Bolkonsky"],
+      correctAnswer: "Andrey Bolkonsky",
     },
     {
-      question: "When was the book '1984' written?",
-      options: ["1949", "1935", "1957"],
-      correctAnswer: "1949",
+      question: "What historical event is War and Peace based on?",
+      options: ["French Revolution", "War of 1812 ", "Revolution of 1917"],
+      correctAnswer: "War of 1812 ",
     },
     {
-      question: "Who translated the book into the Russian edition?",
-      options: ["Ivan Ivanov", "Maria Petrova", "John Smith"],
-      correctAnswer: "Ivan Ivanov",
+      question: "Which part of the book War and Peace describes events during the war?",
+      options: ["First part ", "Second part ", "Third part "],
+      correctAnswer: "First part ",
     },
     {
-      question: "When was the book translated into the Russian edition?",
-      options: ["1960", "1975", "1982"],
-      correctAnswer: "1960",
+      question: "Who is the author of the novel War and Peace?",
+      options: ["Fyodor Dostoevsky ", "Leo Tolstoy ", "Alexander Pushkin"],
+      correctAnswer: "Leo Tolstoy ",
     },
     {
-      question: "What is the name of the country in the book?",
-      options: ["Oceania", "Eurasia", "Eastasia"],
-      correctAnswer: "Eurasia",
+      question: "What event in Russian history plays an important role in the book War and Peace?",
+      options: ["World War I", "The Napoleonic War", "Peasant reform during the time of Peter I"],
+      correctAnswer: "The Napoleonic War",
     },
   ];
 
