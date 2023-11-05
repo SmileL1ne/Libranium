@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на жанр книги</title>
+    <style>
+      .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
+      #test div {
+        margin-bottom: 30px;
+      }
+      .correct {
+        border: 1px solid green;
+      }
+      .incorrect {
+        border: 1px solid red;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <nav class="navbar d-flex navbar-expand-lg navbar-light justify-content-center mx-3 mt-3 rounded-3 shadow" style="background-color: rgb(195, 227, 237);" >
+      <a class="navbar-brand ms-5" href="#">
+          <img src="../resources/logo/Librarium_logo.jpg" alt="Libranium logo" width="200">
+      </a>
+      <h1>Libranium : Test </h1>
+      <div class="collapse navbar-collapse mx-5" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="../html/index.html"><i class="fas fa-house"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../html/users.html"><i class="fas fa-user-group"></i> People</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../html/mybooks.html"><i class="fas fa-book-open"></i> My Books</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  </nav>
+  <div class="mx-auto p-2" style="width: 170px;">
+    <h1>About Quizes</h1>
+  </div>
+    <div class="navbar">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+        </head>
+        <body style="background-color: lightblue;">
+          
+            <button id="openLoginModal">Войти</button>
+            <button id="openRegistrationModal">Зарегистрироваться</button>
+          
+          <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <h2>Вход</h2>
+                <form>
+                    <label for="loginUsername">Имя пользователя:</label>
+                    <input type="text" id="loginUsername" required>
+                    <label for="loginPassword">Пароль:</label>
+                    <input type="password" id="loginPassword" required>
+                    <button type="button" id="loginButton">Войти</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="registrationModal" class="modal">
+          <div class="modal-content">
+              <h2>Регистрация</h2>
+              <form>
+                  <label for="registerUsername">Имя пользователя:</label>
+                  <input type="text" id="registerUsername" required>
+                  <label for="registerEmail">Email:</label>
+                  <input type="email" id="registerEmail" required>
+                  <label for="registerPassword">Пароль:</label>
+                  <input type="password" id="registerPassword" required>
+                  <button type="button" id="registerButton">Зарегистрироваться</button>
+              </form>
+          </div>
+      </div>
+
+      <div id="adminPage" style="display: none;">
+        <h2>Панель администратора</h2>
+        <div id="userData"></div>
+    </div>
+
+    <div class="mt-4">
+      <h2>Why this quiz?</h2>
+      <p>This quiz was created in order to find out if you know this or that book well, users can compete there who knows the book well in time.</p>
+    </div>
+    <div class="mt-4">
+      <h2>Quizes:</h2>
+      <div id="quizList">
+        <div class="quiz-item">
+          <h3>Quiz: Война и Мир</h3>
+          <div id="countdown1">Осталось: 5 минут 0 секунд</div>
+      </div>
+      <div class="quiz-item">
+          <h3>Quiz: 1984</h3>
+          <div id="countdown2">Осталось: 10 минут 0 секунд</div>
+      </div>
+      <div class="quiz-item">
+          <h3>Quiz: Абай Жолы</h3>
+          <div id="countdown3">Завершен</div>
+      </div>      
+      </div>
+    </div>
+  </div>
+
+    
+    <script>
+      // Ваши данные регистрации могут храниться в массиве или объекте
+      const users = [];
+
+      // Ссылки на модальные окна
+      const loginModal = document.getElementById("loginModal");
+      const registrationModal = document.getElementById("registrationModal");
+
+      // Кнопки для открытия модальных окон
+      const openLoginModalButton = document.getElementById("openLoginModal");
+      const openRegistrationModalButton = document.getElementById("openRegistrationModal");
+
+      // Форма входа
+      const loginForm = loginModal.querySelector("form");
+      const loginUsernameInput = document.getElementById("loginUsername");
+      const loginPasswordInput = document.getElementById("loginPassword");
+      const loginButton = document.getElementById("loginButton");
+
+      // Форма регистрации
+      const registrationForm = registrationModal.querySelector("form");
+      const registerUsernameInput = document.getElementById("registerUsername");
+      const registerEmailInput = document.getElementById("registerEmail");
+      const registerPasswordInput = document.getElementById("registerPassword");
+      const registerButton = document.getElementById("registerButton");
+
+      // Панель администратора
+      const adminPage = document.getElementById("adminPage");
+      const userData = document.getElementById("userData");
+
+      // Открыть модальное окно для входа
+      openLoginModalButton.addEventListener("click", () => {
+          loginModal.style.display = "block";
+      });
+
+      // Открыть модальное окно для регистрации
+      openRegistrationModalButton.addEventListener("click", () => {
+          registrationModal.style.display = "block";
+      });
+
+      // Закрыть модальные окна при клике за пределами окна
+      window.addEventListener("click", (event) => {
+          if (event.target === loginModal) {
+              loginModal.style.display = "none";
+          }
+          if (event.target === registrationModal) {
+              registrationModal.style.display = "none";
+          }
+      });
+
+      // Обработка входа
+      loginButton.addEventListener("click", () => {
+          const username = loginUsernameInput.value;
+          const password = loginPasswordInput.value;
+          // Проверка данных входа и авторизация пользователя
+          // (здесь должен быть ваш код)
+          // Если авторизация успешна, вы можете открыть панель администратора
+
+          // Пример: простая проверка наличия пользователя
+          const user = users.find((user) => user.username === username && user.password === password);
+          if (user) {
+              // Вход успешен
+              loginModal.style.display = "none";
+              openAdminPanel(user);
+          } else {
+              // Вход неуспешен, показать сообщение об ошибке
+              alert("Неверное имя пользователя или пароль");
+          }
+      });
+
+      // Обработка регистрации
+      registerButton.addEventListener("click", () => {
+          const username = registerUsernameInput.value;
+          const email = registerEmailInput.value;
+          const password = registerPasswordInput.value;
+          // Регистрация пользователя и сохранение данных
+          // (здесь должен быть ваш код)
+          // Пример: добавление пользователя в массив
+          users.push({ username, email, password });
+          registrationModal.style.display = "none";
+          openAdminPanel();
+      });
+
+      // Открыть панель администратора
+      function openAdminPanel(user) {
+          adminPage.style.display = "block";
+          userData.innerHTML = JSON.stringify(user, null, 2);
+      }
+  </script>
+<script>
+  alert("This is a simple alert message.");
+  var userResponse = prompt("Please enter your name:");
+  alert("Hello, " + userResponse + "!");
+
+</script>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+<div class="container my-5">
+
+  <footer class="bg-primary text-center text-lg-start text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row my-4">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+          <div class="bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+            <img src="../resources/logo/Li_logo.png" width="120px" height="120px"/>
+        </div>
+          <ul class="list-unstyled d-flex flex-row justify-content-center">
+            <li>
+              <a class="text-white px-2" href="#!">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a class="text-white px-2" href="#!">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a class="text-white ps-2" href="#!">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">About Test</h5>
+
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Why tests are short?</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Recently found</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>How to adopt?</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Pets for adoption</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Material gifts</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Help with walks</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Volunteer activities</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Contact</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <p><i class="fas fa-map-marker-alt pe-2"></i>улица Туркистан, Астана 020000</p>
+            </li>
+            <li>
+              <p><i class="fas fa-phone pe-2"></i>8 7172 64 57 10</p>
+            </li>
+            <li>
+              <p><i class="fas fa-envelope pe-2 mb-0"></i>astanait.edu.kz@gmail.com</p>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2023 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+<!-- Подключение Bootstrap JavaScript (при необходимости) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- End of .container -->
+<script>
+  // Функция для отображения времени начала квиза
+  function updateCountdown() {
+      const countdownElement1 = document.getElementById("countdown1");
+      const countdownElement2 = document.getElementById("countdown2");
+      const countdownElement3 = document.getElementById("countdown3");
+      
+
+      // Время начала каждого квиза (время в будущем)
+      const now = new Date();
+      const quiz1StartTime = new Date('2024-12-31T00:00:00'); // Set to specific date and time
+      const quiz2StartTime = new Date('2024-12-31T11:00:00'); // Set to specific date and time
+      const quiz3EndTime = new Date('2022-12-31T11:30:00'); // Set to specific date and time
+
+      // Обновление таймеров
+      const timeDifference1 = quiz1StartTime - now;
+      const timeDifference2 = quiz2StartTime - now;
+      const timeDifference3 = now - quiz3EndTime;
+
+      const minutesRemaining1 = Math.floor((timeDifference1 / 1000 / 60) % 60);
+      const secondsRemaining1 = Math.floor((timeDifference1 / 1000) % 60);
+
+      const minutesRemaining2 = Math.floor((timeDifference2 / 1000 / 60) % 60);
+      const secondsRemaining2 = Math.floor((timeDifference2 / 1000) % 60);
+
+      const minutesPassed3 = Math.floor((timeDifference3 / 1000 / 60) % 60);
+      const secondsPassed3 = Math.floor((timeDifference3 / 1000) % 60);
+
+      countdownElement1.innerHTML = `Начнется через ${minutesRemaining1} минут ${secondsRemaining1} секунд`;
+      countdownElement2.innerHTML = `Начался ${minutesRemaining2} минут ${secondsRemaining2} секунд`;
+      countdownElement3.innerHTML = `Завершен`;
+
+      if (timeDifference1 <= 0) {
+            countdownElement1.innerHTML = `Время истекло`;
+            // Здесь вы можете добавить действия, которые нужно выполнить после окончания квиза.
+        }
+
+        if (timeDifference2 <= 0) {
+            countdownElement2.innerHTML = `Время истекло`;
+            // Здесь вы можете добавить действия, которые нужно выполнить после окончания квиза.
+        }
+  }
+  // Запустим функцию сразу при загрузке страницы
+  setInterval(updateCountdown, 1000);
+</script>
+  </body>
+</html>

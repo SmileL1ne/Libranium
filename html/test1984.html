@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест на жанр книги</title>
     <style>
+      .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
       #test div {
         margin-bottom: 30px;
       }
@@ -15,7 +33,7 @@
         border: 1px solid red;
       }
       .correct::after {
-        content: "✔"; /* Добавляем зеленый кружок для правильных ответов */
+        content: "✔"; 
         color: green;
         font-weight: bold;
         margin-left: 10px;
@@ -51,58 +69,9 @@
         <div class="col-md-6">
         </head>
         <body style="background-color: lightblue;">
-
-<script>
-  // Display Simple Alert Messages and Prompts
-  alert("This is a simple alert message.");
-  var userResponse = prompt("Please enter your name:");
-  alert("Hello, " + userResponse + "!");
-
-</script>
-<form>
-  <label>
-    Name:
-    <input type="text" id="nameInput">
-  </label>
-  <br>
-  <label>
-    Email:
-    <input type="email" id="emailInput">
-  </label>
-  <br>
-  <button type="submit">Submit</button>
-</form>
-<script>
-  const form = document.querySelector("form");
-  const nameInput = document.getElementById("nameInput");
-  const emailInput = document.getElementById("emailInput");
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (nameInput.value === "") {
-      alert("Please enter your name.");
-      nameInput.classList.add("incorrect");
-      return;
-    } else {
-      nameInput.classList.remove("incorrect");
-      nameInput.classList.add("correct");
-    }
-
-    if (emailInput.value === "") {
-      alert("Please enter your email.");
-      emailInput.classList.add("incorrect");
-      return;
-    } else {
-      emailInput.classList.remove("incorrect");
-      emailInput.classList.add("correct");
-    }
-
-    alert("Form submitted successfully!");
-  });
-</script>
-<div id="test"></div>
-<button id="button">Check</button>
+        ы<div id="test">
+    </div>
+    <button id="button">Check</button>
 
 <script>
   let test = document.querySelector('#test');
