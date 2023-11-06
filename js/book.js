@@ -61,10 +61,51 @@ const books_info = [
         language : "German",
         pages : "555"
 
+    },
+    {
+        title : "The Idiot",
+        image : "../resources/images/idiot.jpg",
+        author : "Fyodor Dostoevsky",
+        genre : "Satirical novel",
+        description : "The title is an ironic reference to the central character of the novel, Lev Nikolayevich Myshkin, a young prince whose goodness, open-hearted simplicity, and guilelessness lead many of the more worldly characters he encounters to mistakenly assume that he lacks intelligence and insight. In the character of Prince Myshkin, Dostoevsky set himself the task of depicting the positively good and beautiful man. The novel examines the consequences of placing such a singular individual at the centre of the conflicts, desires, passions, and egoism of worldly society, both for the man himself and for those with whom he becomes involved.",
+        publish_date : "1868-69",
+        publisher : "The Russian Messenger",
+        language : "Russian",
+        pages : "448"
+
+    },
+    {
+        title : "Mein Kampf",
+        image : "../resources/images/mein_kampf.jpg",
+        author : "Adolf Hitler",
+        genre : "Autobiography",
+        description : "Hitler began Mein Kampf while imprisoned following his failed coup in Munich in November 1923 and a trial in February 1924 for high treason, in which he received a sentence of five years. Although he received many visitors initially, he soon devoted himself entirely to the book. As he continued, he realized that it would have to be a two-volume work, with the first volume scheduled for release in early 1925. The governor of Landsberg noted at the time that he [Hitler] hopes the book will run into many editions, thus enabling him to fulfill his financial obligations and to defray the expenses incurred at the time of his trial. After slow initial sales, the book became a bestseller in Germany following Hitler's rise to power in 1933.",
+        publish_date : "18 July 1925",
+        publisher : "Franz Eher Nachfolger",
+        language : "German",
+        pages : "720"
+
+    },
+    {
+        title : "Total Recall: My Unbelievably True Life Story",
+        image : "../resources/images/arnold.jpg",
+        author : "Arnold Schwarzenegger",
+        genre : "Autobiography",
+        description : "The book begins in Austria, where Schwarzenegger was born, and explains why he dreamed of moving to America. By the time he was twenty-one, Schwarzenegger was living in Los Angeles and had been crowned Mr. Universe. Within five years, Schwarzenegger became the greatest bodybuilder in the world and by his thirties, he was a millionaire from his business enterprises in real estate, landscaping, and bodybuilding. ",
+        publish_date : "2012",
+        publisher : "Simon and Schmidt Inc.",
+        language : "English",
+        pages : "637"
+
     }
+
 ];
 
+localStorage.setItem('books_info', JSON.stringify(books_info));
 
+
+
+   
     const book = books_info[bookIndex];
     document.querySelector('div h1').textContent = book.title;
     document.querySelector('.book-cover img').src = book.image;
