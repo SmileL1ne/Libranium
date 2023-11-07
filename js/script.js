@@ -347,12 +347,14 @@ function checkLoginStatus() {
       document.getElementById("signUpButton").style.display = "none";
       document.getElementById("signInButton").style.display = "none";
       document.getElementById("orText").style.display = "none";
-      document.getElementById("logoutButton").style.display = "block"; 
+      document.getElementById("logoutButton").style.display = "block";
+      document.getElementById("my-books").style.display = "block"
     } else {
       document.getElementById("signUpButton").style.display = "block";
       document.getElementById("signInButton").style.display = "block";
       document.getElementById("orText").style.display = "block";
       document.getElementById("logoutButton").style.display = "none"; 
+      document.getElementById("my-books").style.display = "none"
     }
 }
 
@@ -362,6 +364,7 @@ function checkUserAuthorization() {
 
   function logout() {
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('borrowedBooks');
     checkLoginStatus();
   }
 

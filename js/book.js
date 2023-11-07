@@ -11,8 +11,8 @@ const books_info = [
         publish_date : "1869",
         publisher : "The Russian Messenger",
         language : "Russian",
-        pages : "1225"
-
+        pages : "1225",
+        link : "https://uzts.uz/wp-content/uploads/2020/08/tolstojvojnaimirtom_1_2..pdf"
     },
     {
         title : "A Brief History of Time",
@@ -23,8 +23,8 @@ const books_info = [
         publish_date : "1988",
         publisher : "Bantam Dell Publishing Group",
         language : "English",
-        pages : "256"
-
+        pages : "256",
+        link : "https://www.fisica.net/relatividade/stephen_hawking_a_brief_history_of_time.pdf"
     },
     {
         title : "1984",
@@ -35,8 +35,8 @@ const books_info = [
         publish_date : "8 June 1949",
         publisher : "Secker & Warburg",
         language : "English",
-        pages : "328"
-
+        pages : "328",
+        link : "https://rauterberg.employee.id.tue.nl/lecturenotes/DDM110%20CAS/Orwell-1949%201984.pdf"
     },
     {
         title : "Fight Club",
@@ -47,8 +47,8 @@ const books_info = [
         publish_date : "17 August, 1996",
         publisher : "W. W. Norton",
         language : "English",
-        pages : "208"
-
+        pages : "208",
+        link : "http://www.diva-portal.org/smash/get/diva2:1387470/FULLTEXT01.pdf"
     },
     {
         title : "Capital",
@@ -59,8 +59,8 @@ const books_info = [
         publish_date : "1867-1894",
         publisher : "Verlag von Otto Meisner",
         language : "German",
-        pages : "555"
-
+        pages : "555",
+        link : "https://content.csbs.utah.edu/~ehrbar/cap1.pdf"
     },
     {
         title : "The Idiot",
@@ -71,8 +71,8 @@ const books_info = [
         publish_date : "1868-69",
         publisher : "The Russian Messenger",
         language : "Russian",
-        pages : "448"
-
+        pages : "448",
+        link : "https://b1.culture.ru/c/98010/idiot.pdf"
     },
     {
         title : "Mein Kampf",
@@ -83,8 +83,8 @@ const books_info = [
         publish_date : "18 July 1925",
         publisher : "Franz Eher Nachfolger",
         language : "German",
-        pages : "720"
-
+        pages : "720",
+        link : "https://ia804508.us.archive.org/5/items/Mein-Kampf2/HitlerAdolf-MeinKampf-Band1Und2855.Auflage1943818S..pdf"
     },
     {
         title : "Total Recall: My Unbelievably True Life Story",
@@ -95,8 +95,8 @@ const books_info = [
         publish_date : "2012",
         publisher : "Simon and Schmidt Inc.",
         language : "English",
-        pages : "637"
-
+        pages : "637",
+        link : "https://escholarship.org/content/qt9nz678jb/qt9nz678jb_noSplash_5d7e15745a964a835ad69c40fc45e0e0.pdf"
     }
 
 ];
@@ -106,7 +106,7 @@ localStorage.setItem('books_info', JSON.stringify(books_info));
 
 
    
-    const book = books_info[bookIndex];
+    book = books_info[bookIndex];
     document.querySelector('div h1').textContent = book.title;
     document.querySelector('.book-cover img').src = book.image;
     document.querySelector('#author').textContent = book.author;
@@ -153,7 +153,39 @@ window.addEventListener("load", function () {
     countdownInterval = setInterval(countdown, 1000);
 });
 
-function redirectToRead(){
-    readURL = "https://uzts.uz/wp-content/uploads/2020/08/tolstojvojnaimirtom_1_2..pdf";
-    window.location.href = readURL;
+function checkLoginStatus() {
+    if (localStorage.getItem("isLoggedIn")) {
+      document.getElementById("my-books").style.display = "none";
+    } else {
+      document.getElementById("my-books").style.display = "block";
+    }
+}
+
+
+function borrowBook(){
+    if(localStorage.getItem("isLoggedIn")){
+        const borrowedBooks = JSON.parse(localStorage.getItem("borrowedBooks")) || [];
+        
+        let isAlreadyBorrowed = false;
+        for (borrowedBook of borrowedBooks) {
+            if (borrowedBook === book) {
+                isAlreadyBorrowed = true;
+                break;
+            }
+        }
+
+        if(isAlreadyBorrowed){
+            alert("You have already borrowed this book.");
+        } else {
+            borrowedBooks.push(book);
+            localStorage.setItem('borrowedBooks', JSON.stringify(borrowedBooks));
+            alert("Congratulations! You've borrowed the book!")
+        }
+        
+    } else {
+        alert("You are not logged in ! Please log in on the home page")
+    }
+    
+    // readURL = "https://uzts.uz/wp-content/uploads/2020/08/tolstojvojnaimirtom_1_2..pdf";
+    // window.location.href = readURL;
 }
