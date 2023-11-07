@@ -354,7 +354,7 @@ function checkLoginStatus() {
       document.getElementById("orText").style.display = "block";
       document.getElementById("logoutButton").style.display = "none"; 
     }
-  }
+}
 
 function checkUserAuthorization() {
 
