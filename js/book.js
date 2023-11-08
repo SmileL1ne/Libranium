@@ -161,20 +161,28 @@ function checkLoginStatus() {
     }
 }
 
+// const borrowButton = document.getElementById('borrowButton');
+
+// borrowButton.addEventListener('click', borrowBook(book));
+
 
 function borrowBook(){
     if(localStorage.getItem("isLoggedIn")){
         const borrowedBooks = JSON.parse(localStorage.getItem("borrowedBooks")) || [];
         
-        let isAlreadyBorrowed = false;
-        for (borrowedBook of borrowedBooks) {
-            if (borrowedBook === book) {
-                isAlreadyBorrowed = true;
-                break;
-            }
-        }
+        // let isAlreadyBorrowed = false;
+        // for (borrowedBook of borrowedBooks) {
+        //     if (borrowedBook === book) {
+        //         isAlreadyBorrowed = true;
+        //         break;
+        //     }
+        // }
 
-        if(isAlreadyBorrowed){
+        //borrowedBooks.includes(borrowedBook)
+
+        const isTitleMatch = borrowedBooks.some(borrowedBook => borrowedBook.title === book.title);
+
+        if(isTitleMatch){
             alert("You have already borrowed this book.");
         } else {
             borrowedBooks.push(book);

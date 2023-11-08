@@ -68,7 +68,7 @@
               width="60%" />
           </div>
           <div class="d-grid gap-3 mx-5">
-            <button class="btn btn-primary" onclick="borrowBook()">
+            <button class="btn btn-primary" id="borrowButton" onclick="borrowBook()">
               Borrow
             </button>
             <button class="btn btn-danger" id="buy-btn">
@@ -132,6 +132,79 @@
         </div>
       </div>
     </div>
+
+    <!-- Footer content -->
+    <footer class="bg-dark text-white">
+      <div class="container">
+        <div class="row pt-4">
+          <div class="col-md-4">
+            <h3>Contact Information</h3>
+            <p><i class="bi bi-envelope"></i> Email: example@example.com</p>
+            <p><i class="bi bi-telephone"></i> Phone: +7 900 123 45 67</p>
+            <ul
+              class="d-flex list-unstyled justify-content-start gap-5 justify-content-center">
+              <li>
+                <a href="#" title="..."
+                  ><i class="bi bi-twitter text-white"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" title="..."
+                  ><i class="bi bi-facebook text-white"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" title="..."
+                  ><i class="bi bi-telegram text-white"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" title="..."
+                  ><i class="bi bi-youtube text-white"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a class="text-decoration-none text-white" href="#">Home</a>
+              </li>
+              <li>
+                <a class="text-decoration-none text-white" href="#">About Us</a>
+              </li>
+              <li>
+                <a class="text-decoration-none text-white" href="#">Test</a>
+              </li>
+              <li>
+                <a class="text-decoration-none text-white" href="#"
+                  >Book Page</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>Additional Information</h3>
+            <table
+              style="background-color: #f6e9d1"
+              class="table table-borderless table-dark footer-table">
+              <tbody>
+                <tr>
+                  <th scope="row">Address</th>
+                  <td>Expo 1C, Astana, Kazakhstan</td>
+                </tr>
+                <tr>
+                  <th scope="row">Hours</th>
+                  <td>Mon-Fri: 9 AM - 5 PM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>&copy; 2023 Booky-booky</p>
+        </div>
+      </div>
+    </footer>
 
     <script src="../js/book.js"></script>
   </body>
