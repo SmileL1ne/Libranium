@@ -331,12 +331,20 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem('isLoggedIn', 'true');
       checkLoginStatus();
 
+      if (user.username == 'ADMIN'){
+        localStorage.setItem('isAdmin', 'true');
+        checkAdminStatus();
+      }
+
       var signInModalEl = document.getElementById("signInModal");
       var signInModal = bootstrap.Modal.getInstance(signInModalEl);
       signInModal.hide();
     } else {
       alert("Sign in failed: Incorrect email or password.");
     }
+
+    
+
   });
 });
 
@@ -348,24 +356,35 @@ function checkLoginStatus() {
       document.getElementById("signInButton").style.display = "none";
       document.getElementById("orText").style.display = "none";
       document.getElementById("logoutButton").style.display = "block";
-      document.getElementById("my-books").style.display = "block"
+      document.getElementById("my-books").style.display = "block";
     } else {
       document.getElementById("signUpButton").style.display = "block";
       document.getElementById("signInButton").style.display = "block";
       document.getElementById("orText").style.display = "block";
       document.getElementById("logoutButton").style.display = "none"; 
-      document.getElementById("my-books").style.display = "none"
+      document.getElementById("my-books").style.display = "none";
     }
+}
+
+function checkAdminStatus() {
+  if (localStorage.getItem('isAdmin')){
+    document.getElementById("admin").style.display = "block";
+  } else {
+    document.getElementById('admin').style.display = "none";
+  }
 }
 
 function checkUserAuthorization() {
 
   checkLoginStatus();
+  checkAdminStatus();
 
   function logout() {
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('isAdmin');
     localStorage.removeItem('borrowedBooks');
     checkLoginStatus();
+    checkAdminStatus();
   }
 
   document.getElementById('logoutButton').addEventListener('click', logout); 
