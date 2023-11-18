@@ -23,18 +23,6 @@
             border: 1px solid #888;
             width: 50%;
         }
-      #test div {
-        margin-bottom: 30px;
-      }
-      .correct {
-        border: 1px solid green;
-      }
-      .incorrect {
-        border: 1px solid red;
-      }
-      a.disabled {
-         pointer-events: none;
-      }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     </head>
@@ -97,100 +85,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-      // Ваши данные регистрации могут храниться в массиве или объекте
-      const users = [];
-
-      // Ссылки на модальные окна
-      const loginModal = document.getElementById("loginModal");
-      const registrationModal = document.getElementById("registrationModal");
-
-      // Кнопки для открытия модальных окон
-      const openLoginModalButton = document.getElementById("openLoginModal");
-      const openRegistrationModalButton = document.getElementById("openRegistrationModal");
-
-      // Форма входа
-      const loginForm = loginModal.querySelector("form");
-      const loginUsernameInput = document.getElementById("loginUsername");
-      const loginPasswordInput = document.getElementById("loginPassword");
-      const loginButton = document.getElementById("loginButton");
-
-      // Форма регистрации
-      const registrationForm = registrationModal.querySelector("form");
-      const registerUsernameInput = document.getElementById("registerUsername");
-      const registerEmailInput = document.getElementById("registerEmail");
-      const registerPasswordInput = document.getElementById("registerPassword");
-      const registerButton = document.getElementById("registerButton");
-
-      // Панель администратора
-      const adminPage = document.getElementById("adminPage");
-      const userData = document.getElementById("userData");
-
-      // Открыть модальное окно для входа
-      openLoginModalButton.addEventListener("click", () => {
-          loginModal.style.display = "block";
-      });
-
-      // Открыть модальное окно для регистрации
-      openRegistrationModalButton.addEventListener("click", () => {
-          registrationModal.style.display = "block";
-      });
-
-      // Закрыть модальные окна при клике за пределами окна
-      window.addEventListener("click", (event) => {
-          if (event.target === loginModal) {
-              loginModal.style.display = "none";
-          }
-          if (event.target === registrationModal) {
-              registrationModal.style.display = "none";
-          }
-      });
-
-      // Обработка входа
-      loginButton.addEventListener("click", () => {
-          const username = loginUsernameInput.value;
-          const password = loginPasswordInput.value;
-          // Проверка данных входа и авторизация пользователя
-          // (здесь должен быть ваш код)
-          // Если авторизация успешна, вы можете открыть панель администратора
-
-          // Пример: простая проверка наличия пользователя
-          const user = users.find((user) => user.username === username && user.password === password);
-          if (user) {
-              // Вход успешен
-              loginModal.style.display = "none";
-              openAdminPanel(user);
-          } else {
-              // Вход неуспешен, показать сообщение об ошибке
-              alert("Неверное имя пользователя или пароль");
-          }
-      });
-
-      // Обработка регистрации
-      registerButton.addEventListener("click", () => {
-          const username = registerUsernameInput.value;
-          const email = registerEmailInput.value;
-          const password = registerPasswordInput.value;
-          // Регистрация пользователя и сохранение данных
-          // (здесь должен быть ваш код)
-          // Пример: добавление пользователя в массив
-          users.push({ username, email, password });
-          registrationModal.style.display = "none";
-          openAdminPanel();
-      });
-
-      // Открыть панель администратора
-      function openAdminPanel(user) {
-          adminPage.style.display = "block";
-          userData.innerHTML = JSON.stringify(user, null, 2);
-      }
-  </script>
-<script>
-  alert("This is a simple alert message.");
-  var userResponse = prompt("Please enter your name:");
-  alert("Hello, " + userResponse + "!");
-
-</script>
         </div>
         <div class="col-md-3"></div>
       </div>
