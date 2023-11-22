@@ -224,47 +224,56 @@
   ];
 
   for (let i = 0; i < questions.length; i++) {
-    let div = document.createElement('div');
-    div.classList.add('card', 'p-3'); // Добавляем стили Bootstrap
-    test.appendChild(div);
+            let div = document.createElement('div');
+            div.classList.add('card', 'p-3', 'visible'); // Add 'visible' class to make it visible
+            test.appendChild(div);
 
-    let p = document.createElement('p');
-    p.classList.add('h5'); // Добавляем стили Bootstrap
-    p.innerHTML = questions[i].question;
-    div.appendChild(p);
+            let p = document.createElement('p');
+            p.classList.add('h5');
+            p.innerHTML = questions[i].question;
+            div.appendChild(p);
 
-    for (let j = 0; j < questions[i].options.length; j++) {
-      let option = questions[i].options[j];
-      let label = document.createElement('label');
-      let radio = document.createElement('input');
-      radio.type = "radio";
-      radio.name = "question" + i;
-      radio.value = option;
-      radio.classList.add('form-check-input', 'mx-2'); // Добавляем стили Bootstrap и отступы
-      label.appendChild(radio);
-      label.appendChild(document.createTextNode(option));
-      div.appendChild(label);
-    }
-  }
+            for (let j = 0; j < questions[i].options.length; j++) {
+                let option = questions[i].options[j];
+                let label = document.createElement('label');
+                let radio = document.createElement('input');
+                radio.type = "radio";
+                radio.name = "question" + i;
+                radio.value = option;
+                radio.classList.add('form-check-input', 'mx-2');
+                label.appendChild(radio);
+                label.appendChild(document.createTextNode(option));
+                div.appendChild(label);
+            }
+        }
 
-  let button = document.querySelector('#button');
-  button.classList.add('btn'); // Добавляем стили Bootstrap
-  button.addEventListener('click', function() {
-    let inputs = document.querySelectorAll("#test input[type='radio']:checked");
-    for (let input of inputs) {
-      let questionIndex = input.name.replace("question", "");
-      let selectedOption = input.value;
-      let correctAnswer = questions[questionIndex].correctAnswer;
-      if (selectedOption === correctAnswer) {
-        input.classList.add('correct');
-      } else {
-        input.classList.add('incorrect');
-      }
-    }
-    let correctCount = document.querySelectorAll("#test input.correct").length;
-    let resultText = "You answered " + correctCount + " out of " + questions.length + " questions correctly.";
-    resultContainer.innerHTML = resultText; // Update the result container
-  });
+        let button = document.querySelector('#button');
+        button.classList.add('btn');
+        button.addEventListener('click', function () {
+            let currentQuestion = document.querySelector('#test .visible');
+            currentQuestion.classList.remove('visible'); // Remove 'visible' class from the current question
+            let nextQuestion = currentQuestion.nextElementSibling;
+
+            if (nextQuestion) {
+                nextQuestion.classList.add('visible'); // Add 'visible' class to the next question
+            }
+
+            let inputs = currentQuestion.querySelectorAll("input[type='radio']:checked");
+            for (let input of inputs) {
+                let questionIndex = input.name.replace("question", "");
+                let selectedOption = input.value;
+                let correctAnswer = questions[questionIndex].correctAnswer;
+                if (selectedOption === correctAnswer) {
+                    input.classList.add('correct');
+                } else {
+                    input.classList.add('incorrect');
+                }
+            }
+
+            let correctCount = document.querySelectorAll("#test input.correct").length;
+            let resultText = "You answered " + correctCount + " out of " + questions.length + " questions correctly.";
+            resultContainer.innerHTML = resultText;
+        });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
