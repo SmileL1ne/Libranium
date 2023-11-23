@@ -328,11 +328,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (user) {
       alert("Sign in successful!");
 
-      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem("isLoggedIn", "true");
       checkLoginStatus();
 
-      if (user.username == 'ADMIN'){
-        localStorage.setItem('isAdmin', 'true');
+      if (user.username == "ADMIN") {
+        localStorage.setItem("isAdmin", "true");
         checkAdminStatus();
       }
 
@@ -342,52 +342,48 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       alert("Sign in failed: Incorrect email or password.");
     }
-
-    
-
   });
 });
 
 /* Check authorization of user */
 
 function checkLoginStatus() {
-    if (localStorage.getItem("isLoggedIn")) {
-      document.getElementById("signUpButton").style.display = "none";
-      document.getElementById("signInButton").style.display = "none";
-      document.getElementById("orText").style.display = "none";
-      document.getElementById("logoutButton").style.display = "block";
-      document.getElementById("my-books").style.display = "block";
-    } else {
-      document.getElementById("signUpButton").style.display = "block";
-      document.getElementById("signInButton").style.display = "block";
-      document.getElementById("orText").style.display = "block";
-      document.getElementById("logoutButton").style.display = "none"; 
-      document.getElementById("my-books").style.display = "none";
-    }
+  if (localStorage.getItem("isLoggedIn")) {
+    document.getElementById("signUpButton").style.display = "none";
+    document.getElementById("signInButton").style.display = "none";
+    document.getElementById("orText").style.display = "none";
+    document.getElementById("logoutButton").style.display = "block";
+    document.getElementById("my-books").style.display = "block";
+  } else {
+    document.getElementById("signUpButton").style.display = "block";
+    document.getElementById("signInButton").style.display = "block";
+    document.getElementById("orText").style.display = "block";
+    document.getElementById("logoutButton").style.display = "none";
+    document.getElementById("my-books").style.display = "none";
+  }
 }
 
 function checkAdminStatus() {
-  if (localStorage.getItem('isAdmin')){
+  if (localStorage.getItem("isAdmin")) {
     document.getElementById("admin").style.display = "block";
   } else {
-    document.getElementById('admin').style.display = "none";
+    document.getElementById("admin").style.display = "none";
   }
 }
 
 function checkUserAuthorization() {
-
   checkLoginStatus();
   checkAdminStatus();
 
   function logout() {
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('isAdmin');
-    localStorage.removeItem('borrowedBooks');
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("borrowedBooks");
     checkLoginStatus();
     checkAdminStatus();
   }
 
-  document.getElementById('logoutButton').addEventListener('click', logout); 
+  document.getElementById("logoutButton").addEventListener("click", logout);
 }
 
 document.addEventListener("DOMContentLoaded", checkUserAuthorization);

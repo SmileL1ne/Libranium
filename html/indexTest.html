@@ -2,755 +2,881 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Тест на жанр книги</title>
     <style>
-      
-      body
-{
-      background-color: lightblue;
-}
-
-#mainCoantiner
-{
-  background-image:url("https://1.bp.blogspot.com/-Fo3iRt97ZXY/XvSG4EMwi0I/AAAAAAAAVEo/mrApRTcVVRk1m-fX9K-ffNwRUXlHUocdwCLcBGAsYHQ/s1600/h.jpg");
-  
-   background-color: lightblue;
-  height:100%;
-  width:100%;
-  padding-bottom: 50px;
-}
-
-.mystyleSec
-{
-  background-image: url(http://thepatternlibrary.com/img/h.jpg);
-}
-
-.mystylethird
-{
-background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/binding_dark.png");
-}
-/*************header*******/
-
-.main-header {
-    top: 0;
-    left: 0;
-    z-index: 20;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-    height: 70px;
-    width: 100%;
-    bottom: inherit;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    border: 1px solid #2e344d;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -ms-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03);
-    border-width: 1px 0px 0 1px;
-}
-
-.folio-btn {
-    position: absolute;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.03);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    right: 0;
-    height: 70px;
-    width: 70px;
-}
-
-.folio-btn-item {
-position: absolute;
-    width: 40px;
-    height: 40px;
-    left: 15px;
-    top: 15px;
-}
-
-.folio-btn-dot {
-    float: left;
-    width: 33.3%;
-    height: 33.3%;
-    position: relative;
-}
-
-.folio-btn-dot:before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 4px;
-    height: 4px;
-    margin: -2px 0 0 -2px;
-    border-radius: 50%;
-    transition: all 300ms linear;
-    transform: scale(1.0);
-}
-
-.folio-btn-dot:before
-{
-  background: #00BCD4;
-}
-
-.folio-btn:hover .folio-btn-dot:first-child:before, .folio-btn:hover .folio-btn-dot:nth-child(3):before, .folio-btn:hover .folio-btn-dot:nth-child(4):before, .folio-btn:hover .folio-btn-dot:nth-child(8):before {
-    transform: scale(1.8);
-    opacity: 0.5;
-}
-
-
-/***social***/
-.header-social {
-position: absolute;
-    z-index: 20;
-    width: auto;
-    bottom: 17px;
-    right: 90px;
-    padding: 0;
-    min-width: 140px;
-    box-shadow: 3px 9px 16px rgb(0,0,0,0.4), -3px -3px 10px rgba(255,255,255, 0.06), inset 14px 14px 26px rgb(0,0,0,0.3), inset -3px -3px 15px rgba(255,255,255, 0.05);
-    border-width: 1px 0px 0px 1px;
-    border-style: solid;
-    border-color: #2e344d;
-}
-
-.header-social:before
-{
-  background: #00BCD4;
-}
-
-.header-social:before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: -3px;
-    width: 36px;
-    margin-left: -18px;
-    height: 6px;
-}
-
-.header-social li {
-    display: block;
-    float: left;
-    margin-top: 0;
-}
-
-.header-social li a {
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
-    display: inline-block;
-    font-size: 12px;
-    border-style: solid;
-    color: rgba(255, 255, 255, 0.41);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 300ms linear;
-}
-
-.header-social li a:hover
-{
-  color:  #00BCD4;
-  cursor:pointer;
-}
-
-ul, li
-{
-      border: none;
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-.main-header:before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    width: 60px;
-    height: 1px;
-    bottom: 120px;
-    background: rgba(255,255,255,0.1);
-}
-
-/***end*****/
-
-.card{    border: none;
-    border-radius: 30px;
-background-color: #14edaa;}
-
-.wow-bg
-{
-      background-color: #141421;
-    border: 1px solid #2e2e4c;
-    box-shadow: 3px 9px 16px rgb(0,0,0,0.4), -3px -3px 10px rgba(255,255,255, 0.06), inset 14px 14px 26px rgb(0,0,0,0.3), inset -3px -3px 15px rgba(255,255,255, 0.05);
-  border-radius: 10px;
-  margin-top: 4px;
-}
-
-
-
-.starsec{
-  content: " ";
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: transparent;
-   box-shadow: 571px 173px #00BCD4, 1732px 143px #00BCD4, 1745px 454px #FF5722, 234px 784px #00BCD4, 1793px 1123px #FF9800, 1076px 504px #03A9F4, 633px 601px #FF5722, 350px 630px #FFEB3B, 1164px 782px #00BCD4, 76px 690px #3F51B5, 1825px 701px #CDDC39, 1646px 578px #FFEB3B, 544px 293px #2196F3, 445px 1061px #673AB7, 928px 47px #00BCD4, 168px 1410px #8BC34A, 777px 782px #9C27B0, 1235px 1941px #9C27B0, 104px 1690px #8BC34A, 1167px 1338px #E91E63, 345px 1652px #009688, 1682px 1196px #F44336, 1995px 494px #8BC34A, 428px 798px #FF5722, 340px 1623px #F44336, 605px 349px #9C27B0, 1339px 1344px #673AB7, 1102px 1745px #3F51B5, 1592px 1676px #2196F3, 419px 1024px #FF9800, 630px 1033px #4CAF50, 1995px 1644px #00BCD4, 1092px 712px #9C27B0, 1355px 606px #F44336, 622px 1881px #CDDC39, 1481px 621px #9E9E9E, 19px 1348px #8BC34A, 864px 1780px #E91E63, 442px 1136px #2196F3, 67px 712px #FF5722, 89px 1406px #F44336, 275px 321px #009688, 592px 630px #E91E63, 1012px 1690px #9C27B0, 1749px 23px #673AB7, 94px 1542px #FFEB3B, 1201px 1657px #3F51B5, 1505px 692px #2196F3, 1799px 601px #03A9F4, 656px 811px #00BCD4, 701px 597px #00BCD4, 1202px 46px #FF5722, 890px 569px #FF5722, 1613px 813px #2196F3, 223px 252px #FF9800, 983px 1093px #F44336, 726px 1029px #FFC107, 1764px 778px #CDDC39, 622px 1643px #F44336, 174px 1559px #673AB7, 212px 517px #00BCD4, 340px 505px #FFF, 1700px 39px #FFF, 1768px 516px #F44336, 849px 391px #FF9800, 228px 1824px #FFF, 1119px 1680px #FFC107, 812px 1480px #3F51B5, 1438px 1585px #CDDC39, 137px 1397px #FFF, 1080px 456px #673AB7, 1208px 1437px #03A9F4, 857px 281px #F44336, 1254px 1306px #CDDC39, 987px 990px #4CAF50, 1655px 911px #00BCD4, 1102px 1216px #FF5722, 1807px 1044px #FFF, 660px 435px #03A9F4, 299px 678px #4CAF50, 1193px 115px #FF9800, 918px 290px #CDDC39, 1447px 1422px #FFEB3B, 91px 1273px #9C27B0, 108px 223px #FFEB3B, 146px 754px #00BCD4, 461px 1446px #FF5722, 1004px 391px #673AB7, 1529px 516px #F44336, 1206px 845px #CDDC39, 347px 583px #009688, 1102px 1332px #F44336, 709px 1756px #00BCD4, 1972px 248px #FFF, 1669px 1344px #FF5722, 1132px 406px #F44336, 320px 1076px #CDDC39, 126px 943px #FFEB3B, 263px 604px #FF5722, 1546px 692px #F44336;
-  animation: animStar 150s linear infinite;
-}
-
-.starthird
-{
-  content: " ";
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: transparent;
-   box-shadow: 571px 173px #00BCD4, 1732px 143px #00BCD4, 1745px 454px #FF5722, 234px 784px #00BCD4, 1793px 1123px #FF9800, 1076px 504px #03A9F4, 633px 601px #FF5722, 350px 630px #FFEB3B, 1164px 782px #00BCD4, 76px 690px #3F51B5, 1825px 701px #CDDC39, 1646px 578px #FFEB3B, 544px 293px #2196F3, 445px 1061px #673AB7, 928px 47px #00BCD4, 168px 1410px #8BC34A, 777px 782px #9C27B0, 1235px 1941px #9C27B0, 104px 1690px #8BC34A, 1167px 1338px #E91E63, 345px 1652px #009688, 1682px 1196px #F44336, 1995px 494px #8BC34A, 428px 798px #FF5722, 340px 1623px #F44336, 605px 349px #9C27B0, 1339px 1344px #673AB7, 1102px 1745px #3F51B5, 1592px 1676px #2196F3, 419px 1024px #FF9800, 630px 1033px #4CAF50, 1995px 1644px #00BCD4, 1092px 712px #9C27B0, 1355px 606px #F44336, 622px 1881px #CDDC39, 1481px 621px #9E9E9E, 19px 1348px #8BC34A, 864px 1780px #E91E63, 442px 1136px #2196F3, 67px 712px #FF5722, 89px 1406px #F44336, 275px 321px #009688, 592px 630px #E91E63, 1012px 1690px #9C27B0, 1749px 23px #673AB7, 94px 1542px #FFEB3B, 1201px 1657px #3F51B5, 1505px 692px #2196F3, 1799px 601px #03A9F4, 656px 811px #00BCD4, 701px 597px #00BCD4, 1202px 46px #FF5722, 890px 569px #FF5722, 1613px 813px #2196F3, 223px 252px #FF9800, 983px 1093px #F44336, 726px 1029px #FFC107, 1764px 778px #CDDC39, 622px 1643px #F44336, 174px 1559px #673AB7, 212px 517px #00BCD4, 340px 505px #FFF, 1700px 39px #FFF, 1768px 516px #F44336, 849px 391px #FF9800, 228px 1824px #FFF, 1119px 1680px #FFC107, 812px 1480px #3F51B5, 1438px 1585px #CDDC39, 137px 1397px #FFF, 1080px 456px #673AB7, 1208px 1437px #03A9F4, 857px 281px #F44336, 1254px 1306px #CDDC39, 987px 990px #4CAF50, 1655px 911px #00BCD4, 1102px 1216px #FF5722, 1807px 1044px #FFF, 660px 435px #03A9F4, 299px 678px #4CAF50, 1193px 115px #FF9800, 918px 290px #CDDC39, 1447px 1422px #FFEB3B, 91px 1273px #9C27B0, 108px 223px #FFEB3B, 146px 754px #00BCD4, 461px 1446px #FF5722, 1004px 391px #673AB7, 1529px 516px #F44336, 1206px 845px #CDDC39, 347px 583px #009688, 1102px 1332px #F44336, 709px 1756px #00BCD4, 1972px 248px #FFF, 1669px 1344px #FF5722, 1132px 406px #F44336, 320px 1076px #CDDC39, 126px 943px #FFEB3B, 263px 604px #FF5722, 1546px 692px #F44336;
-  animation: animStar 10s linear infinite;
-}
-
-.starfourth
-{
-  content: " ";
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-   box-shadow: 571px 173px #00BCD4, 1732px 143px #00BCD4, 1745px 454px #FF5722, 234px 784px #00BCD4, 1793px 1123px #FF9800, 1076px 504px #03A9F4, 633px 601px #FF5722, 350px 630px #FFEB3B, 1164px 782px #00BCD4, 76px 690px #3F51B5, 1825px 701px #CDDC39, 1646px 578px #FFEB3B, 544px 293px #2196F3, 445px 1061px #673AB7, 928px 47px #00BCD4, 168px 1410px #8BC34A, 777px 782px #9C27B0, 1235px 1941px #9C27B0, 104px 1690px #8BC34A, 1167px 1338px #E91E63, 345px 1652px #009688, 1682px 1196px #F44336, 1995px 494px #8BC34A, 428px 798px #FF5722, 340px 1623px #F44336, 605px 349px #9C27B0, 1339px 1344px #673AB7, 1102px 1745px #3F51B5, 1592px 1676px #2196F3, 419px 1024px #FF9800, 630px 1033px #4CAF50, 1995px 1644px #00BCD4, 1092px 712px #9C27B0, 1355px 606px #F44336, 622px 1881px #CDDC39, 1481px 621px #9E9E9E, 19px 1348px #8BC34A, 864px 1780px #E91E63, 442px 1136px #2196F3, 67px 712px #FF5722, 89px 1406px #F44336, 275px 321px #009688, 592px 630px #E91E63, 1012px 1690px #9C27B0, 1749px 23px #673AB7, 94px 1542px #FFEB3B, 1201px 1657px #3F51B5, 1505px 692px #2196F3, 1799px 601px #03A9F4, 656px 811px #00BCD4, 701px 597px #00BCD4, 1202px 46px #FF5722, 890px 569px #FF5722, 1613px 813px #2196F3, 223px 252px #FF9800, 983px 1093px #F44336, 726px 1029px #FFC107, 1764px 778px #CDDC39, 622px 1643px #F44336, 174px 1559px #673AB7, 212px 517px #00BCD4, 340px 505px #FFF, 1700px 39px #FFF, 1768px 516px #F44336, 849px 391px #FF9800, 228px 1824px #FFF, 1119px 1680px #FFC107, 812px 1480px #3F51B5, 1438px 1585px #CDDC39, 137px 1397px #FFF, 1080px 456px #673AB7, 1208px 1437px #03A9F4, 857px 281px #F44336, 1254px 1306px #CDDC39, 987px 990px #4CAF50, 1655px 911px #00BCD4, 1102px 1216px #FF5722, 1807px 1044px #FFF, 660px 435px #03A9F4, 299px 678px #4CAF50, 1193px 115px #FF9800, 918px 290px #CDDC39, 1447px 1422px #FFEB3B, 91px 1273px #9C27B0, 108px 223px #FFEB3B, 146px 754px #00BCD4, 461px 1446px #FF5722, 1004px 391px #673AB7, 1529px 516px #F44336, 1206px 845px #CDDC39, 347px 583px #009688, 1102px 1332px #F44336, 709px 1756px #00BCD4, 1972px 248px #FFF, 1669px 1344px #FF5722, 1132px 406px #F44336, 320px 1076px #CDDC39, 126px 943px #FFEB3B, 263px 604px #FF5722, 1546px 692px #F44336;
-  animation: animStar 50s linear infinite;
-}
-
-.starfifth
-{
-  content: " ";
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    background: transparent;
-   box-shadow: 571px 173px #00BCD4, 1732px 143px #00BCD4, 1745px 454px #FF5722, 234px 784px #00BCD4, 1793px 1123px #FF9800, 1076px 504px #03A9F4, 633px 601px #FF5722, 350px 630px #FFEB3B, 1164px 782px #00BCD4, 76px 690px #3F51B5, 1825px 701px #CDDC39, 1646px 578px #FFEB3B, 544px 293px #2196F3, 445px 1061px #673AB7, 928px 47px #00BCD4, 168px 1410px #8BC34A, 777px 782px #9C27B0, 1235px 1941px #9C27B0, 104px 1690px #8BC34A, 1167px 1338px #E91E63, 345px 1652px #009688, 1682px 1196px #F44336, 1995px 494px #8BC34A, 428px 798px #FF5722, 340px 1623px #F44336, 605px 349px #9C27B0, 1339px 1344px #673AB7, 1102px 1745px #3F51B5, 1592px 1676px #2196F3, 419px 1024px #FF9800, 630px 1033px #4CAF50, 1995px 1644px #00BCD4, 1092px 712px #9C27B0, 1355px 606px #F44336, 622px 1881px #CDDC39, 1481px 621px #9E9E9E, 19px 1348px #8BC34A, 864px 1780px #E91E63, 442px 1136px #2196F3, 67px 712px #FF5722, 89px 1406px #F44336, 275px 321px #009688, 592px 630px #E91E63, 1012px 1690px #9C27B0, 1749px 23px #673AB7, 94px 1542px #FFEB3B, 1201px 1657px #3F51B5, 1505px 692px #2196F3, 1799px 601px #03A9F4, 656px 811px #00BCD4, 701px 597px #00BCD4, 1202px 46px #FF5722, 890px 569px #FF5722, 1613px 813px #2196F3, 223px 252px #FF9800, 983px 1093px #F44336, 726px 1029px #FFC107, 1764px 778px #CDDC39, 622px 1643px #F44336, 174px 1559px #673AB7, 212px 517px #00BCD4, 340px 505px #FFF, 1700px 39px #FFF, 1768px 516px #F44336, 849px 391px #FF9800, 228px 1824px #FFF, 1119px 1680px #FFC107, 812px 1480px #3F51B5, 1438px 1585px #CDDC39, 137px 1397px #FFF, 1080px 456px #673AB7, 1208px 1437px #03A9F4, 857px 281px #F44336, 1254px 1306px #CDDC39, 987px 990px #4CAF50, 1655px 911px #00BCD4, 1102px 1216px #FF5722, 1807px 1044px #FFF, 660px 435px #03A9F4, 299px 678px #4CAF50, 1193px 115px #FF9800, 918px 290px #CDDC39, 1447px 1422px #FFEB3B, 91px 1273px #9C27B0, 108px 223px #FFEB3B, 146px 754px #00BCD4, 461px 1446px #FF5722, 1004px 391px #673AB7, 1529px 516px #F44336, 1206px 845px #CDDC39, 347px 583px #009688, 1102px 1332px #F44336, 709px 1756px #00BCD4, 1972px 248px #FFF, 1669px 1344px #FF5722, 1132px 406px #F44336, 320px 1076px #CDDC39, 126px 943px #FFEB3B, 263px 604px #FF5722, 1546px 692px #F44336;
-  animation: animStar 80s linear infinite;
-}
-
-@keyframes animStar
-{
-  0% {
-    transform: translateY(0px);
-}
-  100% {
-    transform: translateY(-2000px);
-}
-}
-
-
-
-.logn-btn
-{
-     background: lightblue;
-    border-radius: 30px;
-    overflow: hidden;
-    border: 1px solid #2e344d;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -ms-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-    /* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
-    box-shadow: 0px 2px 26px rgba(244, 241, 241, 0.5), 0px 7px 13px rgb(255, 255, 255);
-    margin-top: 30px;
-}
-
-.logn-btn:hover
-{
-  background-color: lightblue;
-    border-radius: 50px;
-    min-width: 140px;
-    /* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
-    box-shadow: 3px 9px 16px rgba(243, 241, 241, 0.853), -3px -3px 10px rgba(255, 255, 255, 0.607), inset 14px 14px 26px rgba(244, 187, 187, 0.3), inset -3px -3px 15px rgba(224, 215, 215, 0.05);
-    border-width: 1px 0px 0px 1px;
-    border-style: solid;
-    border-color: #2e344d;
-}
-
-.textbox-dg
-{
-  background: rgba(28, 31, 47, 0.16);
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid #2e344d;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -ms-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-    /* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
-    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03);
-    border-width: 1px 0px 0 1px;
-      margin-top: 15px;
-}
-
-
-
-.form-control:focus
-{
-  border: 1px solid #344d2e;
-  color: lightblue;
-    outline: 0;
-    background: rgb(143, 162, 233);
-    border-radius: 4px;
-  transition: all 0.3s ease-in-out 0s;
-    box-shadow: 10px 10px 36px rgb(244, 147, 147), -13px -13px 23px rgba(144, 142, 142, 0.03);
-}
-
-
-
-.btn-link {
-    color: #344d2e;
-}
-
-
-.btn-link:hover {
-    color: #2b7a19;
-    text-decoration: underline;
-}
-
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    color: #807f7f;
-    background-color: transparent;
-    border-color: #2b7a19;
-}
-
-
-.btn-primary.focus, .btn-primary:focus {
-    color: #fff;
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: 0 0 0 0.2rem rgba(0, 255, 110, 0.25);
-}
-
-.mt-6, .my-6 {
-    margin-top: 2rem !important;
-}
-
-
-.socila-btn
-{
-  height: 40px;
-    border-radius: 10%;
-    width: 40px;
-    box-shadow: 3px 9px 16px rgb(237, 234, 234), -3px -3px 10px rgba(241, 238, 238, 0.06), inset 14px 14px 26px rgb(0,0,0,0.3), inset -3px -3px 15px rgba(255,255,255, 0.05);
-    border-width: 1px 0px 0px 1px;
-    border-style: solid;
-    border-color: rgb(255, 255, 255);
-    margin-right: 10px;
-   
-}
-
-.fb-color
-{
-  color:#3b5998 ;
-}
-
-.incolor
-{
-  color:#007bff;
-}
-
-.tweetcolor
-{
-  color:#41a4f7;
-}
-.driblecolor
-{
-  color:#e83e8c;
-}
-
-.colorboard
-{
-  color: #00ffaaed;
-}
-
-
-/***********pricing table**********/
-.title-h1 {
-  margin-top:0.5em;
-       margin-bottom: 1.4em;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    line-height: inherit;
-    color: lightblue;
-    font-size: 38px;
-}
-
-.title-h1 .light
-{
-  font-weight: normal;
-}
-
-.pricing-price-wrapper
-{
-      background-color: rgb(249, 247, 247);
-  border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    padding-top: 45px;
-  padding-bottom: 34px;
-      text-align: center;
-  box-shadow: 20px 20px 60px rgb(243, 241, 241), -20px -20px 60px rgba(241, 235, 235, 0.08);
-}
-.pricing-price
-{
-  background-color: #8c98f1;
-  background-color: #7ee4f2;
-    -webkit-box-shadow: 0px 0px 0px 10px rgb(234, 226, 226);
-    -moz-box-shadow: 0px 0px 0px 10px rgb(248, 243, 243);
-    box-shadow: 0px 0px 0px 10px rgb(255, 255, 255);
-  color: #fff;
-  border-radius: 50%;
-    height: 180px;
-    width: 180px;
-    display: inline-block;
-    padding-top: 46px;
-}
-
-.pricing-cost {
-    font-size: 50px;
-    font-weight: 300;
-    line-height: 1;
-}
-
-.pricing-table-style-4 .time {
-    font-size: 24px;
-    font-weight: 300;
-}
-
-.pricing-row-title
-{
-  background-color: lightblue;
-  padding: 26px 10px;
-      text-align: center;
-}
-
-.pricing_row_title {
-    color: #00bcd4;
-  line-height: 38px;
-  font-size: 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.pricing-table.pricing-table-style-4 .pricing-row
-{
-  background-color: lightblue !important;
-}
-.pricing-table-style-4 figure.pricing-row:first-of-type {
-    padding-top: 15px;
-}
-.pricing-table-style-4 .pricing-row {
-    padding: 5px 10px;
-}
-figure {
-    margin: 0;
-  display: block;
-}
-
-figure {
-display: block;
-    padding-block-start: 0.4em;
-    padding-block-end: 0.4em;
-    padding-inline-start: 40px;
-    padding-inline-end: 40px;
-    background-color: rgb(255, 255, 255);
-    text-align: left;
-}
-
-.pricing-row:before {
-    vertical-align: middle;
-   content: "\f058";
-    font-family: "Font Awesome 5 Free";
-    color: #00bfa5;
-    text-align: center;
-    padding-right: 10px;
-}
-
-.strike:before
-{
-  content:none;
-}
-.pricing_row_title {
-    color: #00bcd4;
-}
-
-
-body
-{
-  color: #5f727f;
-}
-
-.pricing-column
-{
-  float: none;
-    display: inline-block;
-    text-align: left;
-    vertical-align: top;
-    margin-bottom: 42px;
-  -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -ms-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
-
-.pricing-column-wrapper {
-    min-width: 271px;
-  text-align: center;
-}
-
-.pricing-row-title {
-    background-color: rgb(129, 231, 252);
-}
-
-.margin-body
-{
+      body {
+        background-color: lightblue;
+      }
+
+      #mainCoantiner {
+        background-image: url("https://1.bp.blogspot.com/-Fo3iRt97ZXY/XvSG4EMwi0I/AAAAAAAAVEo/mrApRTcVVRk1m-fX9K-ffNwRUXlHUocdwCLcBGAsYHQ/s1600/h.jpg");
+
+        background-color: lightblue;
+        height: 100%;
+        width: 100%;
+        padding-bottom: 50px;
+      }
+
+      .mystyleSec {
+        background-image: url(http://thepatternlibrary.com/img/h.jpg);
+      }
+
+      .mystylethird {
+        background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/binding_dark.png");
+      }
+      /*************header*******/
+
+      .main-header {
+        top: 0;
+        left: 0;
+        z-index: 20;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        height: 70px;
+        width: 100%;
+        bottom: inherit;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        border: 1px solid #2e344d;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        box-shadow: 10px 10px 36px rgb(0, 0, 0, 0.5),
+          -13px -13px 23px rgba(255, 255, 255, 0.03);
+        border-width: 1px 0px 0 1px;
+      }
+
+      .folio-btn {
+        position: absolute;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.03);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        right: 0;
+        height: 70px;
+        width: 70px;
+      }
+
+      .folio-btn-item {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 15px;
+        top: 15px;
+      }
+
+      .folio-btn-dot {
+        float: left;
+        width: 33.3%;
+        height: 33.3%;
         position: relative;
-    width: 90%;
-    box-sizing: border-box;
-    margin: auto;
-}
+      }
 
-.pricing-row
-{
-  border-top: 1px solid lightblue;
-}
+      .folio-btn-dot:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 4px;
+        height: 4px;
+        margin: -2px 0 0 -2px;
+        border-radius: 50%;
+        transition: all 300ms linear;
+        transform: scale(1);
+      }
 
+      .folio-btn-dot:before {
+        background: #00bcd4;
+      }
 
-.pricing-price-wrapper
-{
-  border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    padding-top: 45px;
-}
+      .folio-btn:hover .folio-btn-dot:first-child:before,
+      .folio-btn:hover .folio-btn-dot:nth-child(3):before,
+      .folio-btn:hover .folio-btn-dot:nth-child(4):before,
+      .folio-btn:hover .folio-btn-dot:nth-child(8):before {
+        transform: scale(1.8);
+        opacity: 0.5;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper .pricing-price {
-    background-color: #a637ec;
-    -webkit-box-shadow: 0px 0px 0px 10px rgba(166, 55, 236, 0.31);
-    -moz-box-shadow: 0px 0px 0px 10px rgba(166, 55, 236, 0.31);
-    box-shadow: 0px 0px 0px 10px rgba(166, 55, 236, 0.31);
-}
+      /***social***/
+      .header-social {
+        position: absolute;
+        z-index: 20;
+        width: auto;
+        bottom: 17px;
+        right: 90px;
+        padding: 0;
+        min-width: 140px;
+        box-shadow: 3px 9px 16px rgb(0, 0, 0, 0.4),
+          -3px -3px 10px rgba(255, 255, 255, 0.06),
+          inset 14px 14px 26px rgb(0, 0, 0, 0.3),
+          inset -3px -3px 15px rgba(255, 255, 255, 0.05);
+        border-width: 1px 0px 0px 1px;
+        border-style: solid;
+        border-color: #2e344d;
+      }
 
-.strike
-{
-  text-decoration: line-through;
-    color: #99a9b5;
-}
+      .header-social:before {
+        background: #00bcd4;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper .pricing_row_title {
-    color: #a637ec;
-}
+      .header-social:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -3px;
+        width: 36px;
+        margin-left: -18px;
+        height: 6px;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper .pricing_row_title {
-    color: #ee417c;
-}
+      .header-social li {
+        display: block;
+        float: left;
+        margin-top: 0;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper .pricing-price {
-    background-color: #ee417c;
-    -webkit-box-shadow: 0px 0px 0px 10px rgba(238, 65, 124, 0.31);
-    -moz-box-shadow: 0px 0px 0px 10px rgba(238, 65, 124, 0.31);
-    box-shadow: 0px 0px 0px 10px rgba(238, 65, 124, 0.31);
-}
+      .header-social li a {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        display: inline-block;
+        font-size: 12px;
+        border-style: solid;
+        color: rgba(255, 255, 255, 0.41);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 300ms linear;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper .pricing_row_title {
-    color: #ff994e;
-}
+      .header-social li a:hover {
+        color: #00bcd4;
+        cursor: pointer;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper .pricing-price {
-    background-color: #ff994e;
-    -webkit-box-shadow: 0px 0px 0px 10px rgba(255, 153, 78, 0.31);
-    -moz-box-shadow: 0px 0px 0px 10px rgba(255, 153, 78, 0.31);
-    box-shadow: 0px 0px 0px 10px rgba(255, 153, 78, 0.31);
-}
+      ul,
+      li {
+        border: none;
+        outline: 0;
+        font-weight: inherit;
+        font-style: inherit;
+        font-size: 100%;
+        font-family: inherit;
+        vertical-align: baseline;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper .pricing-row:before{
-    color: #a637ec;
-}
+      ol,
+      ul {
+        list-style: none;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper .pricing-row:before
-{
-  color: #ee417c;
-}
+      .main-header:before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        width: 60px;
+        height: 1px;
+        bottom: 120px;
+        background: rgba(255, 255, 255, 0.1);
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper .pricing-row:before
-{
-      color: #ff994e;
-}
+      /***end*****/
 
+      .card {
+        border: none;
+        border-radius: 30px;
+        background-color: #14edaa;
+      }
 
-.gem-button
-{
-    cursor: pointer;
-  border-width: 2px;
-    line-height: 36px;
-    border-style: solid;
-    background: transparent;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 17px;
-    font-size: 14px;
-    margin: 25px;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    text-transform: uppercase;
-    white-space: nowrap;
-    vertical-align: middle;
-  
-}
-.gem-green
-{
-  border-radius: 0px;
-    border-color: rgb(0, 188, 212);
-    color: rgb(0, 188, 212) !important;
-}
-.gem-green:hover
-{
-     background-color: rgb(0, 188, 212);
-    color: rgb(255, 255, 255) !important;
-}
+      .wow-bg {
+        background-color: #141421;
+        border: 1px solid #2e2e4c;
+        box-shadow: 3px 9px 16px rgb(0, 0, 0, 0.4),
+          -3px -3px 10px rgba(255, 255, 255, 0.06),
+          inset 14px 14px 26px rgb(0, 0, 0, 0.3),
+          inset -3px -3px 15px rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        margin-top: 4px;
+      }
 
-.gem-purpel
-{
-  border-radius: 0px;
-    border-color: rgb(166, 55, 236);
-    color: rgb(166, 55, 236) !important;
-}
+      .starsec {
+        content: " ";
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: 571px 173px #00bcd4, 1732px 143px #00bcd4,
+          1745px 454px #ff5722, 234px 784px #00bcd4, 1793px 1123px #ff9800,
+          1076px 504px #03a9f4, 633px 601px #ff5722, 350px 630px #ffeb3b,
+          1164px 782px #00bcd4, 76px 690px #3f51b5, 1825px 701px #cddc39,
+          1646px 578px #ffeb3b, 544px 293px #2196f3, 445px 1061px #673ab7,
+          928px 47px #00bcd4, 168px 1410px #8bc34a, 777px 782px #9c27b0,
+          1235px 1941px #9c27b0, 104px 1690px #8bc34a, 1167px 1338px #e91e63,
+          345px 1652px #009688, 1682px 1196px #f44336, 1995px 494px #8bc34a,
+          428px 798px #ff5722, 340px 1623px #f44336, 605px 349px #9c27b0,
+          1339px 1344px #673ab7, 1102px 1745px #3f51b5, 1592px 1676px #2196f3,
+          419px 1024px #ff9800, 630px 1033px #4caf50, 1995px 1644px #00bcd4,
+          1092px 712px #9c27b0, 1355px 606px #f44336, 622px 1881px #cddc39,
+          1481px 621px #9e9e9e, 19px 1348px #8bc34a, 864px 1780px #e91e63,
+          442px 1136px #2196f3, 67px 712px #ff5722, 89px 1406px #f44336,
+          275px 321px #009688, 592px 630px #e91e63, 1012px 1690px #9c27b0,
+          1749px 23px #673ab7, 94px 1542px #ffeb3b, 1201px 1657px #3f51b5,
+          1505px 692px #2196f3, 1799px 601px #03a9f4, 656px 811px #00bcd4,
+          701px 597px #00bcd4, 1202px 46px #ff5722, 890px 569px #ff5722,
+          1613px 813px #2196f3, 223px 252px #ff9800, 983px 1093px #f44336,
+          726px 1029px #ffc107, 1764px 778px #cddc39, 622px 1643px #f44336,
+          174px 1559px #673ab7, 212px 517px #00bcd4, 340px 505px #fff,
+          1700px 39px #fff, 1768px 516px #f44336, 849px 391px #ff9800,
+          228px 1824px #fff, 1119px 1680px #ffc107, 812px 1480px #3f51b5,
+          1438px 1585px #cddc39, 137px 1397px #fff, 1080px 456px #673ab7,
+          1208px 1437px #03a9f4, 857px 281px #f44336, 1254px 1306px #cddc39,
+          987px 990px #4caf50, 1655px 911px #00bcd4, 1102px 1216px #ff5722,
+          1807px 1044px #fff, 660px 435px #03a9f4, 299px 678px #4caf50,
+          1193px 115px #ff9800, 918px 290px #cddc39, 1447px 1422px #ffeb3b,
+          91px 1273px #9c27b0, 108px 223px #ffeb3b, 146px 754px #00bcd4,
+          461px 1446px #ff5722, 1004px 391px #673ab7, 1529px 516px #f44336,
+          1206px 845px #cddc39, 347px 583px #009688, 1102px 1332px #f44336,
+          709px 1756px #00bcd4, 1972px 248px #fff, 1669px 1344px #ff5722,
+          1132px 406px #f44336, 320px 1076px #cddc39, 126px 943px #ffeb3b,
+          263px 604px #ff5722, 1546px 692px #f44336;
+        animation: animStar 150s linear infinite;
+      }
 
-.gem-purpel:hover
-{
-     background-color: #a637ec;
-    color: rgb(255, 255, 255) !important;
-}
+      .starthird {
+        content: " ";
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: 571px 173px #00bcd4, 1732px 143px #00bcd4,
+          1745px 454px #ff5722, 234px 784px #00bcd4, 1793px 1123px #ff9800,
+          1076px 504px #03a9f4, 633px 601px #ff5722, 350px 630px #ffeb3b,
+          1164px 782px #00bcd4, 76px 690px #3f51b5, 1825px 701px #cddc39,
+          1646px 578px #ffeb3b, 544px 293px #2196f3, 445px 1061px #673ab7,
+          928px 47px #00bcd4, 168px 1410px #8bc34a, 777px 782px #9c27b0,
+          1235px 1941px #9c27b0, 104px 1690px #8bc34a, 1167px 1338px #e91e63,
+          345px 1652px #009688, 1682px 1196px #f44336, 1995px 494px #8bc34a,
+          428px 798px #ff5722, 340px 1623px #f44336, 605px 349px #9c27b0,
+          1339px 1344px #673ab7, 1102px 1745px #3f51b5, 1592px 1676px #2196f3,
+          419px 1024px #ff9800, 630px 1033px #4caf50, 1995px 1644px #00bcd4,
+          1092px 712px #9c27b0, 1355px 606px #f44336, 622px 1881px #cddc39,
+          1481px 621px #9e9e9e, 19px 1348px #8bc34a, 864px 1780px #e91e63,
+          442px 1136px #2196f3, 67px 712px #ff5722, 89px 1406px #f44336,
+          275px 321px #009688, 592px 630px #e91e63, 1012px 1690px #9c27b0,
+          1749px 23px #673ab7, 94px 1542px #ffeb3b, 1201px 1657px #3f51b5,
+          1505px 692px #2196f3, 1799px 601px #03a9f4, 656px 811px #00bcd4,
+          701px 597px #00bcd4, 1202px 46px #ff5722, 890px 569px #ff5722,
+          1613px 813px #2196f3, 223px 252px #ff9800, 983px 1093px #f44336,
+          726px 1029px #ffc107, 1764px 778px #cddc39, 622px 1643px #f44336,
+          174px 1559px #673ab7, 212px 517px #00bcd4, 340px 505px #fff,
+          1700px 39px #fff, 1768px 516px #f44336, 849px 391px #ff9800,
+          228px 1824px #fff, 1119px 1680px #ffc107, 812px 1480px #3f51b5,
+          1438px 1585px #cddc39, 137px 1397px #fff, 1080px 456px #673ab7,
+          1208px 1437px #03a9f4, 857px 281px #f44336, 1254px 1306px #cddc39,
+          987px 990px #4caf50, 1655px 911px #00bcd4, 1102px 1216px #ff5722,
+          1807px 1044px #fff, 660px 435px #03a9f4, 299px 678px #4caf50,
+          1193px 115px #ff9800, 918px 290px #cddc39, 1447px 1422px #ffeb3b,
+          91px 1273px #9c27b0, 108px 223px #ffeb3b, 146px 754px #00bcd4,
+          461px 1446px #ff5722, 1004px 391px #673ab7, 1529px 516px #f44336,
+          1206px 845px #cddc39, 347px 583px #009688, 1102px 1332px #f44336,
+          709px 1756px #00bcd4, 1972px 248px #fff, 1669px 1344px #ff5722,
+          1132px 406px #f44336, 320px 1076px #cddc39, 126px 943px #ffeb3b,
+          263px 604px #ff5722, 1546px 692px #f44336;
+        animation: animStar 10s linear infinite;
+      }
 
+      .starfourth {
+        content: " ";
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: transparent;
+        box-shadow: 571px 173px #00bcd4, 1732px 143px #00bcd4,
+          1745px 454px #ff5722, 234px 784px #00bcd4, 1793px 1123px #ff9800,
+          1076px 504px #03a9f4, 633px 601px #ff5722, 350px 630px #ffeb3b,
+          1164px 782px #00bcd4, 76px 690px #3f51b5, 1825px 701px #cddc39,
+          1646px 578px #ffeb3b, 544px 293px #2196f3, 445px 1061px #673ab7,
+          928px 47px #00bcd4, 168px 1410px #8bc34a, 777px 782px #9c27b0,
+          1235px 1941px #9c27b0, 104px 1690px #8bc34a, 1167px 1338px #e91e63,
+          345px 1652px #009688, 1682px 1196px #f44336, 1995px 494px #8bc34a,
+          428px 798px #ff5722, 340px 1623px #f44336, 605px 349px #9c27b0,
+          1339px 1344px #673ab7, 1102px 1745px #3f51b5, 1592px 1676px #2196f3,
+          419px 1024px #ff9800, 630px 1033px #4caf50, 1995px 1644px #00bcd4,
+          1092px 712px #9c27b0, 1355px 606px #f44336, 622px 1881px #cddc39,
+          1481px 621px #9e9e9e, 19px 1348px #8bc34a, 864px 1780px #e91e63,
+          442px 1136px #2196f3, 67px 712px #ff5722, 89px 1406px #f44336,
+          275px 321px #009688, 592px 630px #e91e63, 1012px 1690px #9c27b0,
+          1749px 23px #673ab7, 94px 1542px #ffeb3b, 1201px 1657px #3f51b5,
+          1505px 692px #2196f3, 1799px 601px #03a9f4, 656px 811px #00bcd4,
+          701px 597px #00bcd4, 1202px 46px #ff5722, 890px 569px #ff5722,
+          1613px 813px #2196f3, 223px 252px #ff9800, 983px 1093px #f44336,
+          726px 1029px #ffc107, 1764px 778px #cddc39, 622px 1643px #f44336,
+          174px 1559px #673ab7, 212px 517px #00bcd4, 340px 505px #fff,
+          1700px 39px #fff, 1768px 516px #f44336, 849px 391px #ff9800,
+          228px 1824px #fff, 1119px 1680px #ffc107, 812px 1480px #3f51b5,
+          1438px 1585px #cddc39, 137px 1397px #fff, 1080px 456px #673ab7,
+          1208px 1437px #03a9f4, 857px 281px #f44336, 1254px 1306px #cddc39,
+          987px 990px #4caf50, 1655px 911px #00bcd4, 1102px 1216px #ff5722,
+          1807px 1044px #fff, 660px 435px #03a9f4, 299px 678px #4caf50,
+          1193px 115px #ff9800, 918px 290px #cddc39, 1447px 1422px #ffeb3b,
+          91px 1273px #9c27b0, 108px 223px #ffeb3b, 146px 754px #00bcd4,
+          461px 1446px #ff5722, 1004px 391px #673ab7, 1529px 516px #f44336,
+          1206px 845px #cddc39, 347px 583px #009688, 1102px 1332px #f44336,
+          709px 1756px #00bcd4, 1972px 248px #fff, 1669px 1344px #ff5722,
+          1132px 406px #f44336, 320px 1076px #cddc39, 126px 943px #ffeb3b,
+          263px 604px #ff5722, 1546px 692px #f44336;
+        animation: animStar 50s linear infinite;
+      }
 
-.gem-orange
-{
-  border-radius: 0px;
-    border-color: #ee417c;
-    color: #ee417c !important;
-}
+      .starfifth {
+        content: " ";
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        background: transparent;
+        box-shadow: 571px 173px #00bcd4, 1732px 143px #00bcd4,
+          1745px 454px #ff5722, 234px 784px #00bcd4, 1793px 1123px #ff9800,
+          1076px 504px #03a9f4, 633px 601px #ff5722, 350px 630px #ffeb3b,
+          1164px 782px #00bcd4, 76px 690px #3f51b5, 1825px 701px #cddc39,
+          1646px 578px #ffeb3b, 544px 293px #2196f3, 445px 1061px #673ab7,
+          928px 47px #00bcd4, 168px 1410px #8bc34a, 777px 782px #9c27b0,
+          1235px 1941px #9c27b0, 104px 1690px #8bc34a, 1167px 1338px #e91e63,
+          345px 1652px #009688, 1682px 1196px #f44336, 1995px 494px #8bc34a,
+          428px 798px #ff5722, 340px 1623px #f44336, 605px 349px #9c27b0,
+          1339px 1344px #673ab7, 1102px 1745px #3f51b5, 1592px 1676px #2196f3,
+          419px 1024px #ff9800, 630px 1033px #4caf50, 1995px 1644px #00bcd4,
+          1092px 712px #9c27b0, 1355px 606px #f44336, 622px 1881px #cddc39,
+          1481px 621px #9e9e9e, 19px 1348px #8bc34a, 864px 1780px #e91e63,
+          442px 1136px #2196f3, 67px 712px #ff5722, 89px 1406px #f44336,
+          275px 321px #009688, 592px 630px #e91e63, 1012px 1690px #9c27b0,
+          1749px 23px #673ab7, 94px 1542px #ffeb3b, 1201px 1657px #3f51b5,
+          1505px 692px #2196f3, 1799px 601px #03a9f4, 656px 811px #00bcd4,
+          701px 597px #00bcd4, 1202px 46px #ff5722, 890px 569px #ff5722,
+          1613px 813px #2196f3, 223px 252px #ff9800, 983px 1093px #f44336,
+          726px 1029px #ffc107, 1764px 778px #cddc39, 622px 1643px #f44336,
+          174px 1559px #673ab7, 212px 517px #00bcd4, 340px 505px #fff,
+          1700px 39px #fff, 1768px 516px #f44336, 849px 391px #ff9800,
+          228px 1824px #fff, 1119px 1680px #ffc107, 812px 1480px #3f51b5,
+          1438px 1585px #cddc39, 137px 1397px #fff, 1080px 456px #673ab7,
+          1208px 1437px #03a9f4, 857px 281px #f44336, 1254px 1306px #cddc39,
+          987px 990px #4caf50, 1655px 911px #00bcd4, 1102px 1216px #ff5722,
+          1807px 1044px #fff, 660px 435px #03a9f4, 299px 678px #4caf50,
+          1193px 115px #ff9800, 918px 290px #cddc39, 1447px 1422px #ffeb3b,
+          91px 1273px #9c27b0, 108px 223px #ffeb3b, 146px 754px #00bcd4,
+          461px 1446px #ff5722, 1004px 391px #673ab7, 1529px 516px #f44336,
+          1206px 845px #cddc39, 347px 583px #009688, 1102px 1332px #f44336,
+          709px 1756px #00bcd4, 1972px 248px #fff, 1669px 1344px #ff5722,
+          1132px 406px #f44336, 320px 1076px #cddc39, 126px 943px #ffeb3b,
+          263px 604px #ff5722, 1546px 692px #f44336;
+        animation: animStar 80s linear infinite;
+      }
 
-.gem-orange:hover
-{
-     background-color: #ee417c;
-    color: rgb(255, 255, 255) !important;
-}
+      @keyframes animStar {
+        0% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(-2000px);
+        }
+      }
 
-.gem-yellow
-{
-  border-radius: 0px;
-    border-color: #ff994e;
-    color: #ff994e !important;
-}
-.gem-yellow:hover
-{
-     background-color: #ff994e;
-    color: rgb(255, 255, 255) !important;
-}
+      .logn-btn {
+        background: lightblue;
+        border-radius: 30px;
+        overflow: hidden;
+        border: 1px solid #2e344d;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        /* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
+        box-shadow: 0px 2px 26px rgba(244, 241, 241, 0.5),
+          0px 7px 13px rgb(255, 255, 255);
+        margin-top: 30px;
+      }
 
+      .logn-btn:hover {
+        background-color: lightblue;
+        border-radius: 50px;
+        min-width: 140px;
+        /* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
+        box-shadow: 3px 9px 16px rgba(243, 241, 241, 0.853),
+          -3px -3px 10px rgba(255, 255, 255, 0.607),
+          inset 14px 14px 26px rgba(244, 187, 187, 0.3),
+          inset -3px -3px 15px rgba(224, 215, 215, 0.05);
+        border-width: 1px 0px 0px 1px;
+        border-style: solid;
+        border-color: #2e344d;
+      }
 
-.gem-button-position-center {
-    text-align: center;
-    display: block;
-      background-color: rgba(0, 0, 0, 0.16862745098039217);
-    border-radius: 0px 0px 10px 10px;
-}
+      .textbox-dg {
+        background: rgba(28, 31, 47, 0.16);
+        border-radius: 4px;
+        overflow: hidden;
+        border: 1px solid #2e344d;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        /* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
+        box-shadow: 10px 10px 36px rgb(0, 0, 0, 0.5),
+          -13px -13px 23px rgba(255, 255, 255, 0.03);
+        border-width: 1px 0px 0 1px;
+        margin-top: 15px;
+      }
 
-.pricing-column:hover .pricing-price-wrapper
-{
-      box-shadow: 0px 35px 80px rgba(4, 255, 236, 0.25), 0px 0px 0px rgba(10, 197, 173, 0.33);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -ms-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
+      .form-control:focus {
+        border: 1px solid #344d2e;
+        color: lightblue;
+        outline: 0;
+        background: rgb(143, 162, 233);
+        border-radius: 4px;
+        transition: all 0.3s ease-in-out 0s;
+        box-shadow: 10px 10px 36px rgb(244, 147, 147),
+          -13px -13px 23px rgba(144, 142, 142, 0.03);
+      }
 
-.pricing-column:hover
-{
-  overflow:hidden;
-}
+      .btn-link {
+        color: #344d2e;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper .pricing-column:hover .pricing-price-wrapper
-{
-      box-shadow: 0px 35px 80px rgba(230, 2, 241, 0.34), 0px 0px 0px rgba(21, 21, 20, 0.79);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -ms-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
+      .btn-link:hover {
+        color: #2b7a19;
+        text-decoration: underline;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper .pricing-column:hover .pricing-price-wrapper
-{
-       box-shadow: 0px 35px 80px rgba(255, 4, 166, 0.25), 0px 0px 0px rgba(222, 6, 84, 0.33);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -ms-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
+      .btn-primary:not(:disabled):not(.disabled).active,
+      .btn-primary:not(:disabled):not(.disabled):active,
+      .show > .btn-primary.dropdown-toggle {
+        color: #807f7f;
+        background-color: transparent;
+        border-color: #2b7a19;
+      }
 
-.pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper + .pricing-column-wrapper .pricing-column:hover .pricing-price-wrapper
-{
-      box-shadow: 0px 35px 80px rgba(241, 139, 2, 0.34), 0px 0px 0px rgba(21, 21, 20, 0.79);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -ms-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
+      .btn-primary.focus,
+      .btn-primary:focus {
+        color: #fff;
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: 0 0 0 0.2rem rgba(0, 255, 110, 0.25);
+      }
+
+      .mt-6,
+      .my-6 {
+        margin-top: 2rem !important;
+      }
+
+      .socila-btn {
+        height: 40px;
+        border-radius: 10%;
+        width: 40px;
+        box-shadow: 3px 9px 16px rgb(237, 234, 234),
+          -3px -3px 10px rgba(241, 238, 238, 0.06),
+          inset 14px 14px 26px rgb(0, 0, 0, 0.3),
+          inset -3px -3px 15px rgba(255, 255, 255, 0.05);
+        border-width: 1px 0px 0px 1px;
+        border-style: solid;
+        border-color: rgb(255, 255, 255);
+        margin-right: 10px;
+      }
+
+      .fb-color {
+        color: #3b5998;
+      }
+
+      .incolor {
+        color: #007bff;
+      }
+
+      .tweetcolor {
+        color: #41a4f7;
+      }
+      .driblecolor {
+        color: #e83e8c;
+      }
+
+      .colorboard {
+        color: #00ffaaed;
+      }
+
+      /***********pricing table**********/
+      .title-h1 {
+        margin-top: 0.5em;
+        margin-bottom: 1.4em;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        line-height: inherit;
+        color: lightblue;
+        font-size: 38px;
+      }
+
+      .title-h1 .light {
+        font-weight: normal;
+      }
+
+      .pricing-price-wrapper {
+        background-color: rgb(249, 247, 247);
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        padding-top: 45px;
+        padding-bottom: 34px;
+        text-align: center;
+        box-shadow: 20px 20px 60px rgb(243, 241, 241),
+          -20px -20px 60px rgba(241, 235, 235, 0.08);
+      }
+      .pricing-price {
+        background-color: #8c98f1;
+        background-color: #7ee4f2;
+        -webkit-box-shadow: 0px 0px 0px 10px rgb(234, 226, 226);
+        -moz-box-shadow: 0px 0px 0px 10px rgb(248, 243, 243);
+        box-shadow: 0px 0px 0px 10px rgb(255, 255, 255);
+        color: #fff;
+        border-radius: 50%;
+        height: 180px;
+        width: 180px;
+        display: inline-block;
+        padding-top: 46px;
+      }
+
+      .pricing-cost {
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 1;
+      }
+
+      .pricing-table-style-4 .time {
+        font-size: 24px;
+        font-weight: 300;
+      }
+
+      .pricing-row-title {
+        background-color: lightblue;
+        padding: 26px 10px;
+        text-align: center;
+      }
+
+      .pricing_row_title {
+        color: #00bcd4;
+        line-height: 38px;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .pricing-table.pricing-table-style-4 .pricing-row {
+        background-color: lightblue !important;
+      }
+      .pricing-table-style-4 figure.pricing-row:first-of-type {
+        padding-top: 15px;
+      }
+      .pricing-table-style-4 .pricing-row {
+        padding: 5px 10px;
+      }
+      figure {
+        margin: 0;
+        display: block;
+      }
+
+      figure {
+        display: block;
+        padding-block-start: 0.4em;
+        padding-block-end: 0.4em;
+        padding-inline-start: 40px;
+        padding-inline-end: 40px;
+        background-color: rgb(255, 255, 255);
+        text-align: left;
+      }
+
+      .pricing-row:before {
+        vertical-align: middle;
+        content: "\f058";
+        font-family: "Font Awesome 5 Free";
+        color: #00bfa5;
+        text-align: center;
+        padding-right: 10px;
+      }
+
+      .strike:before {
+        content: none;
+      }
+      .pricing_row_title {
+        color: #00bcd4;
+      }
+
+      body {
+        color: #5f727f;
+      }
+
+      .pricing-column {
+        float: none;
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
+        margin-bottom: 42px;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+
+      .pricing-column-wrapper {
+        min-width: 271px;
+        text-align: center;
+      }
+
+      .pricing-row-title {
+        background-color: rgb(129, 231, 252);
+      }
+
+      .margin-body {
+        position: relative;
+        width: 90%;
+        box-sizing: border-box;
+        margin: auto;
+      }
+
+      .pricing-row {
+        border-top: 1px solid lightblue;
+      }
+
+      .pricing-price-wrapper {
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        padding-top: 45px;
+      }
+
+      .pricing-column-wrapper + .pricing-column-wrapper .pricing-price {
+        background-color: #a637ec;
+        -webkit-box-shadow: 0px 0px 0px 10px rgba(166, 55, 236, 0.31);
+        -moz-box-shadow: 0px 0px 0px 10px rgba(166, 55, 236, 0.31);
+        box-shadow: 0px 0px 0px 10px rgba(166, 55, 236, 0.31);
+      }
+
+      .strike {
+        text-decoration: line-through;
+        color: #99a9b5;
+      }
+
+      .pricing-column-wrapper + .pricing-column-wrapper .pricing_row_title {
+        color: #a637ec;
+      }
+
+      .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        .pricing_row_title {
+        color: #ee417c;
+      }
+
+      .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        .pricing-price {
+        background-color: #ee417c;
+        -webkit-box-shadow: 0px 0px 0px 10px rgba(238, 65, 124, 0.31);
+        -moz-box-shadow: 0px 0px 0px 10px rgba(238, 65, 124, 0.31);
+        box-shadow: 0px 0px 0px 10px rgba(238, 65, 124, 0.31);
+      }
+
+      .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        .pricing_row_title {
+        color: #ff994e;
+      }
+
+      .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        .pricing-price {
+        background-color: #ff994e;
+        -webkit-box-shadow: 0px 0px 0px 10px rgba(255, 153, 78, 0.31);
+        -moz-box-shadow: 0px 0px 0px 10px rgba(255, 153, 78, 0.31);
+        box-shadow: 0px 0px 0px 10px rgba(255, 153, 78, 0.31);
+      }
+
+      .pricing-column-wrapper + .pricing-column-wrapper .pricing-row:before {
+        color: #a637ec;
+      }
+
+      .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        .pricing-row:before {
+        color: #ee417c;
+      }
+
+      .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        .pricing-row:before {
+        color: #ff994e;
+      }
+
+      .gem-button {
+        cursor: pointer;
+        border-width: 2px;
+        line-height: 36px;
+        border-style: solid;
+        background: transparent;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 17px;
+        font-size: 14px;
+        margin: 25px;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        text-transform: uppercase;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      .gem-green {
+        border-radius: 0px;
+        border-color: rgb(0, 188, 212);
+        color: rgb(0, 188, 212) !important;
+      }
+      .gem-green:hover {
+        background-color: rgb(0, 188, 212);
+        color: rgb(255, 255, 255) !important;
+      }
+
+      .gem-purpel {
+        border-radius: 0px;
+        border-color: rgb(166, 55, 236);
+        color: rgb(166, 55, 236) !important;
+      }
+
+      .gem-purpel:hover {
+        background-color: #a637ec;
+        color: rgb(255, 255, 255) !important;
+      }
+
+      .gem-orange {
+        border-radius: 0px;
+        border-color: #ee417c;
+        color: #ee417c !important;
+      }
+
+      .gem-orange:hover {
+        background-color: #ee417c;
+        color: rgb(255, 255, 255) !important;
+      }
+
+      .gem-yellow {
+        border-radius: 0px;
+        border-color: #ff994e;
+        color: #ff994e !important;
+      }
+      .gem-yellow:hover {
+        background-color: #ff994e;
+        color: rgb(255, 255, 255) !important;
+      }
+
+      .gem-button-position-center {
+        text-align: center;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.16862745098039217);
+        border-radius: 0px 0px 10px 10px;
+      }
+
+      .pricing-column:hover .pricing-price-wrapper {
+        box-shadow: 0px 35px 80px rgba(4, 255, 236, 0.25),
+          0px 0px 0px rgba(10, 197, 173, 0.33);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+
+      .pricing-column:hover {
+        overflow: hidden;
+      }
+
+      .pricing-column-wrapper
+        + .pricing-column-wrapper
+        .pricing-column:hover
+        .pricing-price-wrapper {
+        box-shadow: 0px 35px 80px rgba(230, 2, 241, 0.34),
+          0px 0px 0px rgba(21, 21, 20, 0.79);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+
+      .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        .pricing-column:hover
+        .pricing-price-wrapper {
+        box-shadow: 0px 35px 80px rgba(255, 4, 166, 0.25),
+          0px 0px 0px rgba(222, 6, 84, 0.33);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+
+      .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        + .pricing-column-wrapper
+        .pricing-column:hover
+        .pricing-price-wrapper {
+        box-shadow: 0px 35px 80px rgba(241, 139, 2, 0.34),
+          0px 0px 0px rgba(21, 21, 20, 0.79);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
 
       .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
 
-        .modal-content {
-            background-color: #fff;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%;
-        }
+      .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+      }
     </style>
     <script
-    src="https://kit.fontawesome.com/ff142c38be.js"
-    crossorigin="anonymous">
-  </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
-    </head>
-    <body style="background-color: lightblue;">
+      src="https://kit.fontawesome.com/ff142c38be.js"
+      crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body style="background-color: lightblue">
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand" href="index.html"
           ><i class="fa-solid fa-book"></i> Libranium</a
         >
         <button
@@ -766,7 +892,7 @@ body
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="#" class="nav-link active"> Home </a>
+              <a href="index.html" class="nav-link active"> Home </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link"> About Us </a>
@@ -775,86 +901,89 @@ body
               <a href="../html/indexTest.html" class="nav-link"> Test </a>
             </li>
             <li class="nav-item">
-              <a href="../html/bookList.html" class="nav-link"> Book List </a>
+              <a href="../html/book.html" class="nav-link" id="random"></a>
             </li>
             <li class="nav-item">
-              <a href="../html/mybooks.html" class="nav-link" id="my-books"> My Books </a>
+              <a href="../html/mybooks.html" class="nav-link" id="my-books">
+                My Books
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-  <div class="mx-auto p-2" style="width: 170px;">
-    <h1>About Quizes</h1>
-  </div>
+    <div class="mx-auto p-2" style="width: 170px">
+      <h1>About Quizes</h1>
+    </div>
     <div class="navbar">
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-        <div class="mt-4">
-      <h2>Why this quiz?</h2>
-      <p>This quiz was created in order to find out if you know this or that book well, users can compete there who knows the book well in time.</p>
-    </div>
-    <div class="mt-4">
-      <h2>Quizes:</h2>
-      <div id="quizList">
-        <div class="quiz-item">
-          <h3>Quiz: Война и Мир</h3>
-          <div id="countdown1">Осталось: 5 минут 0 секунд</div>
-          <a href="testWarAndPeace.html">Перейти к тесту</a>
-      </div>
-      <div class="quiz-item">
-          <h3>Quiz: 1984</h3>
-          <div id="countdown2">Осталось: 10 минут 0 секунд</div>
-          <a href="test1984.html">Перейти к тесту</a>
-      </div>
-      <div class="quiz-item">
-          <h3>Quiz: Абай Жолы</h3>
-          <div id="countdown3">Завершен</div>
-          <a class="disabled" href="testAbai'sWay.html">Перейти к тесту</a>
-            </div>      
+          <div class="mt-4">
+            <h2>Why this quiz?</h2>
+            <p>
+              This quiz was created in order to find out if you know this or
+              that book well, users can compete there who knows the book well in
+              time.
+            </p>
           </div>
-        </div>
-      </div>
-    <div class="col-md-3"></div>
-  </div>
-</div>
-<div class="container my-5">
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+          <div class="mt-4">
+            <h2>Quizes:</h2>
+            <div id="quizList">
+              <div class="quiz-item">
+                <h3>Quiz: Война и Мир</h3>
+                <div id="countdown1">Осталось: 5 минут 0 секунд</div>
+                <a href="testWarAndPeace.html">Перейти к тесту</a>
+              </div>
+              <div class="quiz-item">
+                <h3>Quiz: 1984</h3>
+                <div id="countdown2">Осталось: 10 минут 0 секунд</div>
+                <a href="test1984.html">Перейти к тесту</a>
+              </div>
+              <div class="quiz-item">
+                <h3>Quiz: Абай Жолы</h3>
+                <div id="countdown3">Завершен</div>
+                <a class="disabled" href="testAbai'sWay.html"
+                  >Перейти к тесту</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-md-3"></div>
       </div>
     </div>
-<div class="container my-5">
+    <div class="container my-5"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <div class="col-md-3"></div>
+    <div class="container my-5">
+      <div id="mainCoantiner">
+        <!--dust particel-->
+        <div class="margin-body">
+          <div>
+            <div class="starsec"></div>
+            <div class="starthird"></div>
+            <div class="starfourth"></div>
+            <div class="starfifth"></div>
+          </div>
+          <!--Dust particle end--->
 
-  <div id="mainCoantiner">
-    <!--dust particel-->
-    <div class="margin-body">
-    
-    <div>
-      <div class="starsec"></div>
-      <div class="starthird"></div>
-      <div class="starfourth"></div>
-      <div class="starfifth"></div>
-    </div>
-    <!--Dust particle end--->
-  
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <div class="wpb_text_column wpb_content_element ">
-            <div class="wpb_wrapper">
-              <div class="title-h1 text-center"><span><span class="light">Subscribes</span></span></div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <div class="wpb_text_column wpb_content_element">
+                <div class="wpb_wrapper">
+                  <div class="title-h1 text-center">
+                    <span><span class="light">Subscribes</span></span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
-           <div class="pricing-column">
+
+          <div class="row">
+            <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+              <div class="pricing-column">
                 <div class="pricing-price-row">
                   <div class="pricing-price-wrapper">
                     <div class="pricing-price">
@@ -866,19 +995,25 @@ body
                 <div class="pricing-row-title">
                   <div class="pricing_row_title">tiny</div>
                 </div>
-                <figure class="pricing-row"><span style="color: #5f727f;">Quizes</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Dont share results</span></figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Quizes</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Dont share results</span>
+                </figure>
                 <figure class="pricing-row strike">Ask questions</figure>
                 <figure class="pricing-row strike">Connect with experts</figure>
                 <figure class="pricing-row strike">Share Results</figure>
                 <figure class="pricing-row strike">Unlimited quizes</figure>
                 <div class="pricing-footer">
-                  <div class="gem-button-container gem-button-position-center"><a href="#" class="gem-button gem-green">order now</a></div>
+                  <div class="gem-button-container gem-button-position-center">
+                    <a href="#" class="gem-button gem-green">order now</a>
+                  </div>
                 </div>
               </div>
-      </div>
-      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
-         <div class="pricing-column">
+            </div>
+            <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+              <div class="pricing-column">
                 <div class="pricing-price-row">
                   <div class="pricing-price-wrapper">
                     <div class="pricing-price">
@@ -890,19 +1025,27 @@ body
                 <div class="pricing-row-title">
                   <div class="pricing_row_title">small</div>
                 </div>
-                <figure class="pricing-row"><span style="color: #5f727f;">Quizes</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Dont share results</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Ask questions</span></figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Quizes</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Dont share results</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Ask questions</span>
+                </figure>
                 <figure class="pricing-row strike">Connect with experts</figure>
                 <figure class="pricing-row strike">Share Results</figure>
                 <figure class="pricing-row strike">Unlimited quizes</figure>
                 <div class="pricing-footer">
-                  <div class="gem-button-container gem-button-position-center"><a class="gem-button gem-purpel">order now</a></div>
+                  <div class="gem-button-container gem-button-position-center">
+                    <a class="gem-button gem-purpel">order now</a>
+                  </div>
                 </div>
               </div>
-      </div>
-      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
-        <div class="pricing-column">
+            </div>
+            <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+              <div class="pricing-column">
                 <div class="pricing-price-row">
                   <div class="pricing-price-wrapper">
                     <div class="pricing-price">
@@ -914,187 +1057,240 @@ body
                 <div class="pricing-row-title">
                   <div class="pricing_row_title">medium</div>
                 </div>
-                <figure class="pricing-row"><span style="color: #5f727f;">Quizes</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Dont share results</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Ask questions</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Connect with experts</span></figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Quizes</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Dont share results</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Ask questions</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Connect with experts</span>
+                </figure>
                 <figure class="pricing-row strike">Share Results</figure>
                 <figure class="pricing-row strike">Unlimited quizes</figure>
                 <div class="pricing-footer">
                   <div class="gem-button-container gem-button-position-center">
-                    <a class="gem-button gem-orange">order now</a></div>
+                    <a class="gem-button gem-orange">order now</a>
+                  </div>
                 </div>
               </div>
-      </div>
-      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
-        <div class="pricing-column">
+            </div>
+            <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+              <div class="pricing-column">
                 <div class="pricing-price-row">
                   <div class="pricing-price-wrapper">
                     <div class="pricing-price">
                       <div class="pricing-cost">$145</div>
-                      <div class="time" style="display:inline-block;">Per Month</div>
+                      <div class="time" style="display: inline-block">
+                        Per Month
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="pricing-row-title">
                   <div class="pricing_row_title">large</div>
                 </div>
-                <figure class="pricing-row"><span style="color: #5f727f;">Quizes</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Dont share results</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Ask questions</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Connect with experts</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Share Results</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Unlimited quizes</span></figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Quizes</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Dont share results</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Ask questions</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Connect with experts</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Share Results</span>
+                </figure>
+                <figure class="pricing-row">
+                  <span style="color: #5f727f">Unlimited quizes</span>
+                </figure>
                 <div class="pricing-footer">
-                  <div class="gem-button-container gem-button-position-center"><a class="gem-button gem-yellow">order now</a></div>
+                  <div class="gem-button-container gem-button-position-center">
+                    <a class="gem-button gem-yellow">order now</a>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <footer class="bg-primary text-center text-lg-start text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row my-4">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <div
+                class="bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+                style="width: 150px; height: 150px">
+                <img
+                  src="../resources/logo/Li_logo.png"
+                  width="120px"
+                  height="120px" />
+              </div>
+              <ul class="list-unstyled d-flex flex-row justify-content-center">
+                <li>
+                  <a class="text-white px-2" href="#!">
+                    <i class="fab fa-facebook-square"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white px-2" href="#!">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white ps-2" href="#!">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">About Test</h5>
+
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Why tests are short?</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Recently found</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>How to adopt?</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Pets for adoption</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Material gifts</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Help with walks</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Volunteer activities</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">Contact</h5>
+
+              <ul class="list-unstyled">
+                <li>
+                  <p>
+                    <i class="fas fa-map-marker-alt pe-2"></i>улица Туркистан,
+                    Астана 020000
+                  </p>
+                </li>
+                <li>
+                  <p><i class="fas fa-phone pe-2"></i>8 7172 64 57 10</p>
+                </li>
+                <li>
+                  <p>
+                    <i class="fas fa-envelope pe-2 mb-0"></i
+                    >astanait.edu.kz@gmail.com
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2023 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/"
+            >MDBootstrap.com</a
+          >
+        </div>
+        <!-- Copyright -->
+      </footer>
     </div>
-  
-   </div>
-  </div>
+    <!-- Подключение Bootstrap JavaScript (при необходимости) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- End of .container -->
+    <script>
+      // Функция для отображения времени начала квиза
+      function updateCountdown() {
+        const countdownElement1 = document.getElementById("countdown1");
+        const countdownElement2 = document.getElementById("countdown2");
+        const countdownElement3 = document.getElementById("countdown3");
 
-  <footer class="bg-primary text-center text-lg-start text-white">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!--Grid row-->
-      <div class="row my-4">
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        // Время начала каждого квиза (время в будущем)
+        const now = new Date();
+        const quiz1StartTime = new Date("2024-12-31T00:00:00"); // Set to specific date and time
+        const quiz2StartTime = new Date("2024-12-31T11:00:00"); // Set to specific date and time
+        const quiz3EndTime = new Date("2022-12-31T11:30:00"); // Set to specific date and time
 
-          <div class="bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
-            <img src="../resources/logo/Li_logo.png" width="120px" height="120px"/>
-        </div>
-          <ul class="list-unstyled d-flex flex-row justify-content-center">
-            <li>
-              <a class="text-white px-2" href="#!">
-                <i class="fab fa-facebook-square"></i>
-              </a>
-            </li>
-            <li>
-              <a class="text-white px-2" href="#!">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a class="text-white ps-2" href="#!">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </li>
-          </ul>
+        // Обновление таймеров
+        const timeDifference1 = quiz1StartTime - now;
+        const timeDifference2 = quiz2StartTime - now;
+        const timeDifference3 = now - quiz3EndTime;
 
-        </div>
-        <!--Grid column-->
+        const minutesRemaining1 = Math.floor(
+          (timeDifference1 / 1000 / 60) % 60
+        );
+        const secondsRemaining1 = Math.floor((timeDifference1 / 1000) % 60);
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">About Test</h5>
+        const minutesRemaining2 = Math.floor(
+          (timeDifference2 / 1000 / 60) % 60
+        );
+        const secondsRemaining2 = Math.floor((timeDifference2 / 1000) % 60);
 
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Why tests are short?</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Recently found</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>How to adopt?</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Pets for adoption</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Material gifts</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Help with walks</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Volunteer activities</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+        const minutesPassed3 = Math.floor((timeDifference3 / 1000 / 60) % 60);
+        const secondsPassed3 = Math.floor((timeDifference3 / 1000) % 60);
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Contact</h5>
+        countdownElement1.innerHTML = `Начнется через ${minutesRemaining1} минут ${secondsRemaining1} секунд`;
+        countdownElement2.innerHTML = `Начался ${minutesRemaining2} минут ${secondsRemaining2} секунд`;
+        countdownElement3.innerHTML = `Завершен`;
 
-          <ul class="list-unstyled">
-            <li>
-              <p><i class="fas fa-map-marker-alt pe-2"></i>улица Туркистан, Астана 020000</p>
-            </li>
-            <li>
-              <p><i class="fas fa-phone pe-2"></i>8 7172 64 57 10</p>
-            </li>
-            <li>
-              <p><i class="fas fa-envelope pe-2 mb-0"></i>astanait.edu.kz@gmail.com</p>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2023 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-
-</div>
-<!-- Подключение Bootstrap JavaScript (при необходимости) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- End of .container -->
-<script>
-  // Функция для отображения времени начала квиза
-  function updateCountdown() {
-      const countdownElement1 = document.getElementById("countdown1");
-      const countdownElement2 = document.getElementById("countdown2");
-      const countdownElement3 = document.getElementById("countdown3");
-      
-
-      // Время начала каждого квиза (время в будущем)
-      const now = new Date();
-      const quiz1StartTime = new Date('2024-12-31T00:00:00'); // Set to specific date and time
-      const quiz2StartTime = new Date('2024-12-31T11:00:00'); // Set to specific date and time
-      const quiz3EndTime = new Date('2022-12-31T11:30:00'); // Set to specific date and time
-
-      // Обновление таймеров
-      const timeDifference1 = quiz1StartTime - now;
-      const timeDifference2 = quiz2StartTime - now;
-      const timeDifference3 = now - quiz3EndTime;
-
-      const minutesRemaining1 = Math.floor((timeDifference1 / 1000 / 60) % 60);
-      const secondsRemaining1 = Math.floor((timeDifference1 / 1000) % 60);
-
-      const minutesRemaining2 = Math.floor((timeDifference2 / 1000 / 60) % 60);
-      const secondsRemaining2 = Math.floor((timeDifference2 / 1000) % 60);
-
-      const minutesPassed3 = Math.floor((timeDifference3 / 1000 / 60) % 60);
-      const secondsPassed3 = Math.floor((timeDifference3 / 1000) % 60);
-
-      countdownElement1.innerHTML = `Начнется через ${minutesRemaining1} минут ${secondsRemaining1} секунд`;
-      countdownElement2.innerHTML = `Начался ${minutesRemaining2} минут ${secondsRemaining2} секунд`;
-      countdownElement3.innerHTML = `Завершен`;
-
-      if (timeDifference1 <= 0) {
-            countdownElement1.innerHTML = `Время истекло`;
-            // Здесь вы можете добавить действия, которые нужно выполнить после окончания квиза.
+        if (timeDifference1 <= 0) {
+          countdownElement1.innerHTML = `Время истекло`;
+          // Здесь вы можете добавить действия, которые нужно выполнить после окончания квиза.
         }
 
         if (timeDifference2 <= 0) {
-            countdownElement2.innerHTML = `Время истекло`;
-            // Здесь вы можете добавить действия, которые нужно выполнить после окончания квиза.
+          countdownElement2.innerHTML = `Время истекло`;
+          // Здесь вы можете добавить действия, которые нужно выполнить после окончания квиза.
         }
-  }
-  // Запустим функцию сразу при загрузке страницы
-  setInterval(updateCountdown, 1000);
-</script>
+      }
+      // Запустим функцию сразу при загрузке страницы
+      setInterval(updateCountdown, 1000);
+    </script>
   </body>
 </html>

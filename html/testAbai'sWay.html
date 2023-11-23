@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
-
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizes about Books</title>
     <style>
       .modal {
@@ -18,7 +17,6 @@
         background-color: rgba(0, 0, 0, 0.5);
       }
 
-
       .modal-content {
         background-color: #fff;
         margin: 10% auto;
@@ -27,48 +25,40 @@
         width: 50%;
       }
 
-
       #test div {
         margin-bottom: 30px;
         text-align: center;
       }
 
-
       .correct {
         border: 1px solid green;
       }
-
 
       .incorrect {
         border: 1px solid red;
       }
 
-
       .correct::after {
-        content: "✔"; 
+        content: "✔";
         color: green;
         font-weight: bold;
         margin-left: -50px; /* Уменьшаем отступ между значком и ответами */
       }
 
-
       .incorrect::after {
-        content: "❌"; 
+        content: "❌";
         color: red;
         font-weight: bold;
         margin-left: -50px; /* Уменьшаем отступ между значком и ответами */
       }
-
-
     </style>
 
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" />
   </head>
 
-  <body style="background-color: lightblue;">
-
-
+  <body style="background-color: lightblue">
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
@@ -100,198 +90,259 @@
               <a href="../html/bookList.html" class="nav-link"> Book List </a>
             </li>
             <li class="nav-item">
-              <a href="../html/mybooks.html" class="nav-link" id="my-books"> My Books </a>
+              <a href="../html/mybooks.html" class="nav-link" id="my-books">
+                My Books
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-  <div class="mx-auto p-2" style="width: 170px;">
-    <h1>Quizes</h1>
-  </div>
-  <div class="navbar">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <div id="test">
+    <div class="mx-auto p-2" style="width: 170px">
+      <h1>Quizes</h1>
     </div>
-    <button id="button" class="btn btn-primary mt-3">Check</button>
-                </div>
-                <div class="col-md-3"></div>
-            </div>
+    <div class="navbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <div id="test"></div>
+            <button id="button" class="btn btn-primary mt-3">Check</button>
+          </div>
+          <div class="col-md-3"></div>
         </div>
+      </div>
     </div>
 
     <div class="container my-5">
       <footer class="bg-primary text-center text-lg-start text-white">
-          <div class="container p-4">
-              <div class="row my-4">
-                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                      <div class="bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
-                          style="width: 150px; height: 150px;">
-                          <img src="../resources/logo/Li_logo.png" width="120px" height="120px" />
-                      </div>
-                      <ul class="list-unstyled d-flex flex-row justify-content-center">
-                          <li>
-                              <a class="text-white px-2" href="#!">
-                                  <i class="fab fa-facebook-square"></i>
-                              </a>
-                          </li>
-                          <li>
-                              <a class="text-white px-2" href="#!">
-                                  <i class="fab fa-instagram"></i>
-                              </a>
-                          </li>
-                          <li>
-                              <a class="text-white ps-2" href="#!">
-                                  <i class="fab fa-youtube"></i>
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                      <h5 class="text-uppercase mb-4">About Test</h5>
-                      <ul class="list-unstyled">
-                          <li class="mb-2">
-                              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Why tests are short?</a>
-                          </li>
-                          <li class="mb-2">
-                              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Recently found</a>
-                          </li>
-                          <li class="mb-2">
-                              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>How to adopt?</a>
-                          </li>
-                          <li class="mb-2">
-                              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Pets for adoption</a>
-                          </li>
-                          <li class="mb-2">
-                              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Material gifts</a>
-                          </li>
-                          <li class="mb-2">
-                              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Help with walks</a>
-                          </li>
-                          <li class="mb-2">
-                              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Volunteer activities</a>
-                          </li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                      <h5 class="text-uppercase mb-4">Contact</h5>
-                      <ul class="list-unstyled">
-                          <li>
-                              <p><i class="fas fa-map-marker-alt pe-2"></i>улица Туркистан, Астана 020000</p>
-                          </li>
-                          <li>
-                              <p><i class="fas fa-phone pe-2"></i>87172 64 57 10</p>
-                          </li>
-                          <li>
-                              <p><i class="fas fa-envelope pe-2 mb-0"></i>astanait.edu.kz@gmail.com</p>
-                          </li>
-                      </ul>
-                  </div>
+        <div class="container p-4">
+          <div class="row my-4">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <div
+                class="bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+                style="width: 150px; height: 150px">
+                <img
+                  src="../resources/logo/Li_logo.png"
+                  width="120px"
+                  height="120px" />
               </div>
-          </div>
+              <ul class="list-unstyled d-flex flex-row justify-content-center">
+                <li>
+                  <a class="text-white px-2" href="#!">
+                    <i class="fab fa-facebook-square"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white px-2" href="#!">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white ps-2" href="#!">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-              © 2023 Copyright:
-              <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">About Test</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Why tests are short?</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Recently found</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>How to adopt?</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Pets for adoption</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Material gifts</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Help with walks</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"
+                    ><i class="fas fa-paw pe-3"></i>Volunteer activities</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">Contact</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <p>
+                    <i class="fas fa-map-marker-alt pe-2"></i>улица Туркистан,
+                    Астана 020000
+                  </p>
+                </li>
+                <li>
+                  <p><i class="fas fa-phone pe-2"></i>87172 64 57 10</p>
+                </li>
+                <li>
+                  <p>
+                    <i class="fas fa-envelope pe-2 mb-0"></i
+                    >astanait.edu.kz@gmail.com
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
+
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2023 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/"
+            >MDBootstrap.com</a
+          >
+        </div>
       </footer>
-  </div>
+    </div>
 
+    <script>
+      let test = document.querySelector("#test");
+      let resultContainer = document.createElement("div"); // Create a container for the result
+      test.parentNode.insertBefore(resultContainer, test.nextSibling); // Insert it after the #test element
+      let questions = [
+        {
+          question: "Who is the author of the book 'Abai's Way'?",
+          options: ["Mukhtar Auesov", "Abai Kunanbaev ", "Saken Seifulin"],
+          correctAnswer: "Mukhtar Auesov",
+        },
+        {
+          question:
+            "In which country do the events described in the book 'Abai's Path” take place?",
+          options: ["Kazahstan", "Russia", "Turkmenistan"],
+          correctAnswer: "Kazahstan",
+        },
+        {
+          question: "What topic does the book 'The Path of Abai' explore?",
+          options: [
+            "History of Europe",
+            "Biography of a famous artist ",
+            "Cultural and spiritual development of the people",
+          ],
+          correctAnswer: "Cultural and spiritual development of the people",
+        },
+        {
+          question:
+            "What influence did Abai Kunanbaev have on the culture of his country?",
+          options: [
+            "He was a famous football player",
+            "He played a key role in the development of Kazakh literature and culture ",
+            "He was a great military leader",
+          ],
+          correctAnswer:
+            "He played a key role in the development of Kazakh literature and culture ",
+        },
+        {
+          question:
+            "What ideas and values ​​does Abai Kunanbaev express in his works?",
+          options: [
+            "Racism and hatred of other cultures",
+            "Tolerance, patriotism and respect for Kazakh culture",
+            "Atheism and secularism",
+          ],
+          correctAnswer: "Tolerance, patriotism and respect for Kazakh culture",
+        },
+        {
+          question:
+            "What ideas and values ​​does Abai Kunanbaev express in his works?",
+          options: [
+            "Racism and hatred of other cultures",
+            "Tolerance, patriotism and respect for Kazakh culture",
+            "Atheism and secularism",
+          ],
+          correctAnswer: "Tolerance, patriotism and respect for Kazakh culture",
+        },
+        {
+          question:
+            "What ideas and values ​​does Abai Kunanbaev express in his works?",
+          options: [
+            "Racism and hatred of other cultures",
+            "Tolerance, patriotism and respect for Kazakh culture",
+            "Atheism and secularism",
+          ],
+          correctAnswer: "Tolerance, patriotism and respect for Kazakh culture",
+        },
+      ];
 
-<script>
-  let test = document.querySelector('#test');
-  let resultContainer = document.createElement('div'); // Create a container for the result
-  test.parentNode.insertBefore(resultContainer, test.nextSibling); // Insert it after the #test element
-  let questions = [
-    {
-      question: "Who is the author of the book 'Abai's Way'?",
-      options: ["Mukhtar Auesov", "Abai Kunanbaev ", "Saken Seifulin"],
-      correctAnswer: "Mukhtar Auesov",
-    },
-    {
-      question: "In which country do the events described in the book 'Abai's Path” take place?",
-      options: ["Kazahstan", "Russia", "Turkmenistan"],
-      correctAnswer: "Kazahstan",
-    },
-    {
-      question: "What topic does the book 'The Path of Abai' explore?",
-      options: ["History of Europe", "Biography of a famous artist ", "Cultural and spiritual development of the people"],
-      correctAnswer: "Cultural and spiritual development of the people",
-    },
-    {
-      question: "What influence did Abai Kunanbaev have on the culture of his country?",
-      options: ["He was a famous football player", "He played a key role in the development of Kazakh literature and culture ", "He was a great military leader"],
-      correctAnswer: "He played a key role in the development of Kazakh literature and culture ",
-    },
-    {
-      question: "What ideas and values ​​does Abai Kunanbaev express in his works?",
-      options: ["Racism and hatred of other cultures", "Tolerance, patriotism and respect for Kazakh culture", "Atheism and secularism"],
-      correctAnswer: "Tolerance, patriotism and respect for Kazakh culture",
-    },
-    {
-      question: "What ideas and values ​​does Abai Kunanbaev express in his works?",
-      options: ["Racism and hatred of other cultures", "Tolerance, patriotism and respect for Kazakh culture", "Atheism and secularism"],
-      correctAnswer: "Tolerance, patriotism and respect for Kazakh culture",
-    },
-    {
-      question: "What ideas and values ​​does Abai Kunanbaev express in his works?",
-      options: ["Racism and hatred of other cultures", "Tolerance, patriotism and respect for Kazakh culture", "Atheism and secularism"],
-      correctAnswer: "Tolerance, patriotism and respect for Kazakh culture",
-    },
-  ];
+      for (let i = 0; i < questions.length; i++) {
+        let div = document.createElement("div");
+        div.classList.add("card", "p-3");
+        test.appendChild(div);
 
-  for (let i = 0; i < questions.length; i++) {
-    let div = document.createElement('div');
-    div.classList.add('card', 'p-3'); 
-    test.appendChild(div);
+        let p = document.createElement("p");
+        p.classList.add("h5");
+        p.innerHTML = questions[i].question;
+        div.appendChild(p);
 
-    let p = document.createElement('p');
-    p.classList.add('h5'); 
-    p.innerHTML = questions[i].question;
-    div.appendChild(p);
-
-    for (let j = 0; j < questions[i].options.length; j++) {
-      let option = questions[i].options[j];
-      let label = document.createElement('label');
-      let radio = document.createElement('input');
-      radio.type = "radio";
-      radio.name = "question" + i;
-      radio.value = option;
-      radio.classList.add('form-check-input', 'mx-2'); 
-      label.appendChild(radio);
-      label.appendChild(document.createTextNode(option));
-      div.appendChild(label);
-    }
-  }
-
-  let button = document.querySelector('#button');
-  button.classList.add('btn'); 
-  button.addEventListener('click', function() {
-    let inputs = document.querySelectorAll("#test input[type='radio']:checked");
-    for (let input of inputs) {
-      let questionIndex = input.name.replace("question", "");
-      let selectedOption = input.value;
-      let correctAnswer = questions[questionIndex].correctAnswer;
-      if (selectedOption === correctAnswer) {
-        input.classList.add('correct');
-      } else {
-        input.classList.add('incorrect');
+        for (let j = 0; j < questions[i].options.length; j++) {
+          let option = questions[i].options[j];
+          let label = document.createElement("label");
+          let radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = "question" + i;
+          radio.value = option;
+          radio.classList.add("form-check-input", "mx-2");
+          label.appendChild(radio);
+          label.appendChild(document.createTextNode(option));
+          div.appendChild(label);
+        }
       }
-    }
-    let correctCount = document.querySelectorAll("#test input.correct").length;
-    let resultText = "You answered " + correctCount + " out of " + questions.length + " questions correctly.";
-    resultContainer.innerHTML = resultText; // Update the result container
-  });
-</script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+      let button = document.querySelector("#button");
+      button.classList.add("btn");
+      button.addEventListener("click", function () {
+        let inputs = document.querySelectorAll(
+          "#test input[type='radio']:checked"
+        );
+        for (let input of inputs) {
+          let questionIndex = input.name.replace("question", "");
+          let selectedOption = input.value;
+          let correctAnswer = questions[questionIndex].correctAnswer;
+          if (selectedOption === correctAnswer) {
+            input.classList.add("correct");
+          } else {
+            input.classList.add("incorrect");
+          }
+        }
+        let correctCount = document.querySelectorAll(
+          "#test input.correct"
+        ).length;
+        let resultText =
+          "You answered " +
+          correctCount +
+          " out of " +
+          questions.length +
+          " questions correctly.";
+        resultContainer.innerHTML = resultText; // Update the result container
+      });
+    </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
-
 </html>

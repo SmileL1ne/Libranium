@@ -1,93 +1,90 @@
 const storedBooks = JSON.parse(localStorage.getItem("borrowedBooks")) || [];
 
 function displayBooks() {
-    const bookList = document.getElementById('my-book-list');
+  const bookList = document.getElementById("my-book-list");
 
-    bookList.innerHTML = '';
+  bookList.innerHTML = "";
 
-    if (storedBooks.length === 0) {
-        const noBooksHeader = document.createElement('h2');
-        noBooksHeader.textContent = "You haven't borrowed any books yet";
-        bookList.appendChild(noBooksHeader);
-    } else {
-        storedBooks.forEach((book, index) => {
-            const li = document.createElement('li');
-            li.classList.add('list-group-item');
+  if (storedBooks.length === 0) {
+    const noBooksHeader = document.createElement("h2");
+    noBooksHeader.textContent = "You haven't borrowed any books yet";
+    bookList.appendChild(noBooksHeader);
+  } else {
+    storedBooks.forEach((book, index) => {
+      const li = document.createElement("li");
+      li.classList.add("list-group-item");
 
-            const detailsContainer = document.createElement('div');
-            detailsContainer.classList.add('book-details-container');
-            // detailsContainer.classList.add('rounded');
-            // detailsContainer.style.backgroundColor = "#FBF2E0";
-            
-            const imgContainer = document.createElement('div');
-            imgContainer.classList.add('image-container');
+      const detailsContainer = document.createElement("div");
+      detailsContainer.classList.add("book-details-container");
+      // detailsContainer.classList.add('rounded');
+      // detailsContainer.style.backgroundColor = "#FBF2E0";
 
-            const imageLink = document.createElement('a');
-            imageLink.href = `../html/book.html?index=${index}`;
-            //imageLink.target = '_blank'; 
+      const imgContainer = document.createElement("div");
+      imgContainer.classList.add("image-container");
 
-            const image = document.createElement('img');
-            image.classList.add('m-2');
-            image.style.width = '15%';
-            image.src = book.image;
-            image.alt = book.title; 
-            imageLink.appendChild(image);
+      const imageLink = document.createElement("a");
+      imageLink.href = `../html/book.html?index=${index}`;
+      //imageLink.target = '_blank';
 
-            const detailsDiv = document.createElement('div');
-            detailsDiv.classList.add('book-details');
+      const image = document.createElement("img");
+      image.classList.add("m-2");
+      image.style.width = "15%";
+      image.src = book.image;
+      image.alt = book.title;
+      imageLink.appendChild(image);
 
-            const title = document.createElement('h5');
-            title.textContent = book.title;
+      const detailsDiv = document.createElement("div");
+      detailsDiv.classList.add("book-details");
 
-            const readButton = document.createElement('button');
-            readButton.textContent = 'Read';
-            readButton.classList.add('btn');
-            readButton.classList.add('btn-primary');
-            readButton.addEventListener('click', () => {
-                window.location.href = book.link;
-            });
-            
+      const title = document.createElement("h5");
+      title.textContent = book.title;
 
-            const removeButton = document.createElement('button');
-            removeButton.textContent = 'Remove';
-            removeButton.classList.add('btn');
-            removeButton.classList.add('btn-danger');
-            removeButton.addEventListener('click', () => {
-                removeBook(book);
-            });
+      const readButton = document.createElement("button");
+      readButton.textContent = "Read";
+      readButton.classList.add("btn");
+      readButton.classList.add("btn-primary");
+      readButton.addEventListener("click", () => {
+        window.location.href = book.link;
+      });
 
-            detailsDiv.appendChild(title);
-            detailsDiv.appendChild(readButton);
-            detailsDiv.appendChild(removeButton);
-            imgContainer.appendChild(imageLink);
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "Remove";
+      removeButton.classList.add("btn");
+      removeButton.classList.add("btn-danger");
+      removeButton.addEventListener("click", () => {
+        removeBook(book);
+      });
 
-            detailsContainer.appendChild(imgContainer);
-            detailsContainer.appendChild(detailsDiv);
+      detailsDiv.appendChild(title);
+      detailsDiv.appendChild(readButton);
+      detailsDiv.appendChild(removeButton);
+      imgContainer.appendChild(imageLink);
 
-            li.appendChild(detailsContainer);
+      detailsContainer.appendChild(imgContainer);
+      detailsContainer.appendChild(detailsDiv);
 
-            bookList.appendChild(li);
+      li.appendChild(detailsContainer);
 
-        });
-    }
-
+      bookList.appendChild(li);
+    });
+  }
 }
 
 function removeBook(book) {
-    const index = storedBooks.indexOf(book);
-    if (index !== -1) {
-        storedBooks.splice(index, 1);
-        localStorage.setItem('borrowedBooks', JSON.stringify(storedBooks));
-        displayBooks();
-    }
+  const index = storedBooks.indexOf(book);
+  if (index !== -1) {
+    storedBooks.splice(index, 1);
+    localStorage.setItem("borrowedBooks", JSON.stringify(storedBooks));
+    displayBooks();
+  }
 }
 
 function checkLoginStatus() {
-    if (localStorage.getItem("isLoggedIn")) {
-      document.getElementById("my-books").style.display = "none";
-    } else {
-      document.getElementById("my-books").style.display = "block";
-    }
+  if (localStorage.getItem("isLoggedIn")) {
+    document.getElementById("my-books").style.display = "none";
+  } else {
+    document.getElementById("my-books").style.display = "block";
+  }
 }
 
 displayBooks();
