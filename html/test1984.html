@@ -57,11 +57,18 @@
       #share-buttons {
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
             margin-top: 20px;
         }
 
         #share-buttons a {
-            margin: 0 10px;
+            margin: 10px 0;
+        }
+        #gif-image {
+            width: 200px; /* Задайте ширину гифки по вашему усмотрению */
+            height: 200px;
+            margin-top: 20px;
         }
     </style>
 
@@ -76,6 +83,7 @@
       <div id="result-modal" class="modal">
           <div class="modal-content">
               <p id="result-text"></p>
+              <img id="gif-image" src="https://media1.giphy.com/media/10FwycrnAkpshW/giphy.gif" alt="GIF">
               <div id="share-buttons">
                   <!-- Add your social media share buttons here -->
                   <a href="#" id="share-facebook">Share on Facebook</a>
