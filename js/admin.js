@@ -17,14 +17,14 @@ function loadUsers() {
   } else {
     users.forEach((user) => {
       const listItem = document.createElement("li");
-      listItem.className = "list-group-item list-group-item-action";
+      listItem.className = "list-group-item list-group-item-action mb-5";
       listItem.textContent = `Username: ${user.username}, Email: ${user.email}, Password: ${user.password}`;
       listItem.href = "#";
       const removeButton = document.createElement("button");
       removeButton.textContent = "Remove";
       removeButton.classList.add("btn");
       removeButton.classList.add("btn-danger");
-      removeButton.classList.add("ms-2");
+      removeButton.classList.add("mx-4");
       removeButton.addEventListener("click", () => {
         confirmRemoveUser(user);
       });
@@ -63,12 +63,14 @@ function loadBooks() {
 
   for (const book of books) {
     const listItem = document.createElement("li");
+    listItem.className = "list-group-item list-group-item-action mb-5";
     listItem.textContent = `Title: ${book.title}, Author: ${book.author}`;
 
     // Create a "Remove" button for each book
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
     removeButton.classList.add("btn");
+    removeButton.classList.add("mx-4");
     removeButton.classList.add("btn-danger");
     removeButton.addEventListener("click", () => {
       confirmRemoveBook(book);

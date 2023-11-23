@@ -55,12 +55,44 @@
       .list-group-item-action:hover {
         background-color: wheat;
       }
+
+      .custom-form input[type="email"],
+      .custom-form input[type="password"],
+      .custom-form input[type="checkbox"] {
+        background-color: rgba(
+          244,
+          242,
+          237,
+          0.632
+        ); /* Change to your desired color */
+      }
+
+      body {
+        position: relative;
+        background-image: url("../resources/logo/lib.png"); /* Update with the correct path */
+        background-size: cover; /* This will ensure the image covers the whole page */
+        background-repeat: no-repeat; /* This prevents the image from repeating */
+        background-attachment: fixed; /* This will give a parallax-like effect */
+        background-position: center center; /* This centers the image on the page */
+        margin: 0;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7); /* Black with 50% opacity */
+        z-index: -1; /* Ensures the overlay is behind the content */
+      }
     </style>
 
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand" href="index.html"
           ><i class="fa-solid fa-book"></i> Libranium</a
         >
         <button
@@ -76,10 +108,7 @@
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="#" class="nav-link active"> Home </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link"> About Us </a>
+              <a href="index.html" class="nav-link active"> Home </a>
             </li>
             <li class="nav-item">
               <a href="../html/indexTest.html" class="nav-link"> Test </a>
@@ -140,12 +169,12 @@
     <section class="banner container-fluid">
       <div
         class="banner-content text-center d-block align-items-center justify-content-center py-5">
-        <h1 class="pt-5">Welcome to Our Online Store</h1>
+        <h1 class="pt-5">Library of your favorite books!</h1>
 
         <button
           id="showUsersBtn"
-          style="color: wheat"
-          class="btn btn-dark mt-4">
+          style="color: black"
+          class="btn btn-light mt-4">
           Show Registered Users
         </button>
         <div id="usersList" class="mt-3"></div>
@@ -153,7 +182,7 @@
         <p class="fs-5 pt-3">
           Discover the latest products and enjoy exclusive offers.
         </p>
-        <a href="#" style="color: wheat" class="btn btn-dark" id="greetShopping"
+        <a href="#" style="color: black" class="btn btn-light" id="greetShopping"
           >Shop Now</a
         >
       </div>
@@ -201,8 +230,10 @@
                 Immerse yourself in captivating stories and fictional worlds
                 with our extensive fiction collection.
               </p>
-              <button type="button" class="btn btn-dark">
-                <a href="#" style="text-decoration: none; color: wheat"
+              <button type="button" class="btn btn-light">
+                <a
+                  href="bookList.html"
+                  style="text-decoration: none; color: black"
                   >Browse Fiction</a
                 >
               </button>
@@ -219,8 +250,10 @@
                 Expand your knowledge with our diverse non-fiction collection
                 covering a wide range of topics.
               </p>
-              <button type="button" class="btn btn-dark">
-                <a href="#" style="text-decoration: none; color: wheat"
+              <button type="button" class="btn btn-light">
+                <a
+                  href="bookList.html"
+                  style="text-decoration: none; color: black"
                   >Browse Non-Fiction</a
                 >
               </button>
@@ -237,8 +270,10 @@
                 Explore the world of science through our diverse collection of
                 books, covering a wide range of topics and discoveries.
               </p>
-              <button type="button" class="btn btn-dark">
-                <a href="#" style="text-decoration: none; color: wheat"
+              <button type="button" class="btn btn-light">
+                <a
+                  href="bookList.html"
+                  style="text-decoration: none; color: black"
                   >Browse Romance</a
                 >
               </button>
@@ -346,7 +381,7 @@
         </div>
 
         <!-- Form for mailing -->
-        <form class="mt-5" id="validationForm">
+        <form class="mt-5 custom-form" id="validationForm">
           <h2>Get fresh news in your email!</h2>
           <div class="row justify-content-center">
             <div class="col-md-4 mb-3">
@@ -517,24 +552,19 @@
     <!-- About us -->
     <div class="about_us container-fluid d-flex justify-content-center">
       <div
-        style="border-radius: 20px; background-color: #f6e9d1"
-        class="d-block text-center justify-content-center w-50 mt-5 mb-5 pt-5">
+        style="border-radius: 20px"
+        class="d-block bg-dark text-white text-center justify-content-center w-50 mt-5 mb-5 pt-5">
         <h1>About Us</h1>
         <p class="fs-4 mb-5">
           We are open source library where everyone can borrow and read desired
           book or even several of them just as our slogan says - just borrow,
           read and enjoy!
         </p>
-        <h1 class="mt-5">Countdown Timer</h1>
-        <p id="countdown">Time remaining: <span id="timer">10</span> seconds</p>
-        <button id="startButton" type="button" class="btn btn-primary mb-5">
-          Start Countdown
-        </button>
       </div>
     </div>
 
     <!-- Footer content -->
-    <footer class="bg-dark text-white">
+    <footer class="bg-dark text-white-50">
       <div class="container">
         <div class="row pt-4">
           <div class="col-md-4">
@@ -544,23 +574,23 @@
             <ul
               class="d-flex list-unstyled justify-content-start gap-5 justify-content-center">
               <li>
-                <a href="#" title="..."
-                  ><i class="bi bi-twitter text-white"></i
+                <a href="http://twitter.com" title="..."
+                  ><i class="bi bi-twitter text-white text-white-50"></i
                 ></a>
               </li>
               <li>
-                <a href="#" title="..."
-                  ><i class="bi bi-facebook text-white"></i
+                <a href="http://facebook.com" title="..."
+                  ><i class="bi bi-facebook text-white text-white-50"></i
                 ></a>
               </li>
               <li>
-                <a href="#" title="..."
-                  ><i class="bi bi-telegram text-white"></i
+                <a href="http://telegram.org" title="..."
+                  ><i class="bi bi-telegram text-white text-white-50"></i
                 ></a>
               </li>
               <li>
-                <a href="#" title="..."
-                  ><i class="bi bi-youtube text-white"></i
+                <a href="http://youtube.com" title="..."
+                  ><i class="bi bi-youtube text-white text-white-50"></i
                 ></a>
               </li>
             </ul>
@@ -569,34 +599,35 @@
             <h3>Quick Links</h3>
             <ul class="list-unstyled">
               <li>
-                <a class="text-decoration-none text-white" href="#">Home</a>
+                <a class="text-decoration-none text-white-50" href="#">Home</a>
               </li>
               <li>
-                <a class="text-decoration-none text-white" href="#">About Us</a>
+                <a
+                  class="text-decoration-none text-white-50"
+                  href="indexTest.html"
+                  >Test</a
+                >
               </li>
               <li>
-                <a class="text-decoration-none text-white" href="#">Test</a>
-              </li>
-              <li>
-                <a class="text-decoration-none text-white" href="#"
-                  >Book Page</a
+                <a
+                  class="text-decoration-none text-white-50"
+                  href="bookList.html"
+                  >Book List</a
                 >
               </li>
             </ul>
           </div>
           <div class="col-md-4">
             <h3>Additional Information</h3>
-            <table
-              style="background-color: #f6e9d1"
-              class="table table-borderless table-dark footer-table">
+            <table class="table table-borderless table-dark footer-table">
               <tbody>
                 <tr>
-                  <th scope="row">Address</th>
-                  <td>Expo 1C, Astana, Kazakhstan</td>
+                  <th scope="row" class="text-white-50">Address</th>
+                  <td class="text-white-50">Expo 1C, Astana, Kazakhstan</td>
                 </tr>
                 <tr>
-                  <th scope="row">Hours</th>
-                  <td>Mon-Fri: 9 AM - 5 PM</td>
+                  <th scope="row" class="text-white-50">Hours</th>
+                  <td class="text-white-50">Mon-Fri: 9 AM - 5 PM</td>
                 </tr>
               </tbody>
             </table>

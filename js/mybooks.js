@@ -8,6 +8,7 @@ function displayBooks() {
   if (storedBooks.length === 0) {
     const noBooksHeader = document.createElement("h2");
     noBooksHeader.textContent = "You haven't borrowed any books yet";
+    noBooksHeader.style.textAlign = "center";
     bookList.appendChild(noBooksHeader);
   } else {
     storedBooks.forEach((book, index) => {

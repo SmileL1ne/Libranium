@@ -21,13 +21,18 @@
     <script
       src="https://kit.fontawesome.com/ff142c38be.js"
       crossorigin="anonymous"></script>
+    <style>
+      html {
+        height: 100%;
+      }
+    </style>
     <title>Admin Page</title>
   </head>
   <body style="background-color: lightblue">
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand" href="index.html"
           ><i class="fa-solid fa-book"></i> Libranium</a
         >
         <button
@@ -43,10 +48,7 @@
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="#" class="nav-link active"> Home </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link"> About Us </a>
+              <a href="index.html" class="nav-link active"> Home </a>
             </li>
             <li class="nav-item">
               <a href="../html/indexTest.html" class="nav-link"> Test </a>
@@ -65,14 +67,36 @@
     </nav>
 
     <h1>Admin Page</h1>
-    <h2>Users</h2>
-    <ul id="userList"></ul>
+    <h2 class="mt-5">Users</h2>
+    <ul id="userList" class="m-3 p-5"></ul>
 
-    <h2>Books</h2>
-    <ul id="bookList" class="list-unstyled"></ul>
-    <input type="text" id="bookTitleInput" placeholder="Title" />
-    <input type="text" id="bookAuthorInput" placeholder="Author" />
-    <button onclick="addBook()">Add Book</button>
+    <h2 class="m-5">Books</h2>
+    <ul id="bookList" class="list-unstyled mb-5"></ul>
+    <div class="mb-5">
+      <div class="row justify-content-center">
+        <div class="col-md-2 mb-3">
+          <input
+            type="text"
+            id="bookTitleInput"
+            class="form-control"
+            style="background-color: rgba(244, 242, 237, 0.632)"
+            placeholder="Title" />
+        </div>
+        <div class="col-md-2 mb-3">
+          <input
+            type="text"
+            id="bookAuthorInput"
+            class="form-control"
+            style="background-color: rgba(244, 242, 237, 0.632)"
+            placeholder="Author" />
+        </div>
+      </div>
+      <button onclick="addBook()" class="btn btn-success">Add Book</button>
+    </div>
+
+    <div class="mt-5">
+      <br />
+    </div>
 
     <script src="../js/admin.js"></script>
   </body>

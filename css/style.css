@@ -211,5 +211,23 @@ hr {
 }
 
 body {
-  background-color: lightblue;
+  position: relative;
+  background-image: url("../resources/logo/lib.png"); /* Update with the correct path */
+  background-size: cover; /* This will ensure the image covers the whole page */
+  background-repeat: no-repeat; /* This prevents the image from repeating */
+  background-attachment: fixed; /* This will give a parallax-like effect */
+  background-position: center center; /* This centers the image on the page */
+  margin: 0;
+  color: white;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Black with 50% opacity */
+  z-index: -1; /* Ensures the overlay is behind the content */
 }

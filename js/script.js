@@ -143,35 +143,6 @@ nextButton.addEventListener("click", () => {
 
 updateSlider();
 
-function startCountdown(timerValue) {
-  let countdownInterval;
-
-  function updateTimer() {
-    const timerElement = document.getElementById("timer");
-    timerElement.textContent = timerValue;
-  }
-
-  function countdownLogic() {
-    timerValue--;
-    updateTimer();
-
-    if (timerValue === 0) {
-      clearInterval(countdownInterval);
-      countdownInterval = null;
-      timerValue = 10;
-      alert("Countdown complete!");
-    }
-  }
-
-  document.getElementById("startButton").addEventListener("click", function () {
-    if (!countdownInterval) {
-      countdownInterval = setInterval(countdownLogic, 1000);
-    }
-  });
-  timerValue = 10;
-}
-startCountdown(10);
-
 document.getElementById("greetShopping").addEventListener("click", sayGoodLuck);
 document
   .getElementById("getFavoriteGenre")
