@@ -206,11 +206,13 @@
 
 <script>
   let test = document.querySelector('#test');
+  let resultContainer = document.createElement('div'); // Create a container for the result
+  test.parentNode.insertBefore(resultContainer, test.nextSibling); // Insert it after the #test element
   let questions = [
     {
       question: "Who is the author of the book 'Abai's Way'?",
-      options: ["Alexander Pushkin", "Abai Kunanbaev ", "Leo Tolstoy"],
-      correctAnswer: "Abai Kunanbaev",
+      options: ["Mukhtar Auesov", "Abai Kunanbaev ", "Saken Seifulin"],
+      correctAnswer: "Mukhtar Auesov",
     },
     {
       question: "In which country do the events described in the book 'Abai's Path” take place?",
@@ -232,15 +234,25 @@
       options: ["Racism and hatred of other cultures", "Tolerance, patriotism and respect for Kazakh culture", "Atheism and secularism"],
       correctAnswer: "Tolerance, patriotism and respect for Kazakh culture",
     },
+    {
+      question: "What ideas and values ​​does Abai Kunanbaev express in his works?",
+      options: ["Racism and hatred of other cultures", "Tolerance, patriotism and respect for Kazakh culture", "Atheism and secularism"],
+      correctAnswer: "Tolerance, patriotism and respect for Kazakh culture",
+    },
+    {
+      question: "What ideas and values ​​does Abai Kunanbaev express in his works?",
+      options: ["Racism and hatred of other cultures", "Tolerance, patriotism and respect for Kazakh culture", "Atheism and secularism"],
+      correctAnswer: "Tolerance, patriotism and respect for Kazakh culture",
+    },
   ];
 
   for (let i = 0; i < questions.length; i++) {
     let div = document.createElement('div');
-    div.classList.add('card', 'p-3'); // Добавляем стили Bootstrap
+    div.classList.add('card', 'p-3'); 
     test.appendChild(div);
 
     let p = document.createElement('p');
-    p.classList.add('h5'); // Добавляем стили Bootstrap
+    p.classList.add('h5'); 
     p.innerHTML = questions[i].question;
     div.appendChild(p);
 
@@ -251,7 +263,7 @@
       radio.type = "radio";
       radio.name = "question" + i;
       radio.value = option;
-      radio.classList.add('form-check-input', 'mx-2'); // Добавляем стили Bootstrap и отступы
+      radio.classList.add('form-check-input', 'mx-2'); 
       label.appendChild(radio);
       label.appendChild(document.createTextNode(option));
       div.appendChild(label);
@@ -259,7 +271,7 @@
   }
 
   let button = document.querySelector('#button');
-  button.classList.add('btn'); // Добавляем стили Bootstrap
+  button.classList.add('btn'); 
   button.addEventListener('click', function() {
     let inputs = document.querySelectorAll("#test input[type='radio']:checked");
     for (let input of inputs) {
@@ -273,7 +285,8 @@
       }
     }
     let correctCount = document.querySelectorAll("#test input.correct").length;
-    alert("You answered " + correctCount + " out of " + questions.length + " questions correctly.");
+    let resultText = "You answered " + correctCount + " out of " + questions.length + " questions correctly.";
+    resultContainer.innerHTML = resultText; // Update the result container
   });
 </script>
 

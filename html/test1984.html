@@ -206,6 +206,8 @@
 
 <script>
   let test = document.querySelector('#test');
+  let resultContainer = document.createElement('div'); // Create a container for the result
+  test.parentNode.insertBefore(resultContainer, test.nextSibling); // Insert it after the #test element
   let questions = [
     {
       question: "Who is the author of the book '1984'?",
@@ -273,7 +275,8 @@
       }
     }
     let correctCount = document.querySelectorAll("#test input.correct").length;
-    alert("You answered " + correctCount + " out of " + questions.length + " questions correctly.");
+    let resultText = "You answered " + correctCount + " out of " + questions.length + " questions correctly.";
+    resultContainer.innerHTML = resultText; // Update the result container
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
