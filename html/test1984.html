@@ -20,9 +20,11 @@
       .modal-content {
         background-color: #fff;
         margin: 10% auto;
-        padding: 20px;
+        padding: 150px;
         border: 1px solid #888;
         width: 50%;
+        max-width: 500px; /* Set a maximum width for a square form */
+        text-align: center; /* Center the content */
       }
 
       #test div {
@@ -51,6 +53,16 @@
         font-weight: bold;
         margin-left: -50px; /* Уменьшаем отступ между значком и ответами */
       }
+
+      #share-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #share-buttons a {
+            margin: 0 10px;
+        }
     </style>
 
     <link
@@ -59,6 +71,24 @@
   </head>
 
   <body style="background-color: lightblue">
+
+    <div class="container my-5">
+      <div id="result-modal" class="modal">
+          <div class="modal-content">
+              <p id="result-text"></p>
+              <div id="share-buttons">
+                  <!-- Add your social media share buttons here -->
+                  <a href="#" id="share-facebook">Share on Facebook</a>
+                  <a href="#" id="share-twitter">Share on Twitter</a>
+              </div>
+          </div>
+      </div>
+      <footer class="bg-primary text-center text-lg-start text-white">
+          <!-- Your existing footer code -->
+      </footer>
+  </div>
+
+
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
@@ -226,6 +256,11 @@
       let test = document.querySelector("#test");
       let resultContainer = document.createElement("div"); // Create a container for the result
       test.parentNode.insertBefore(resultContainer, test.nextSibling); // Insert it after the #test element
+
+      let resultModal = document.getElementById('result-modal');
+      let resultTextElement = document.getElementById('result-text');
+      let shareButtonsElement = document.getElementById('share-buttons');
+
       let questions = [
         {
           question: "Who is the author of the book '1984'?",
@@ -279,6 +314,7 @@
       }
 
       let button = document.querySelector("#button");
+      let correctCount = 0;
       button.classList.add("btn"); // Добавляем стили Bootstrap
       button.addEventListener("click", function () {
         let inputs = document.querySelectorAll(
@@ -288,23 +324,35 @@
           let questionIndex = input.name.replace("question", "");
           let selectedOption = input.value;
           let correctAnswer = questions[questionIndex].correctAnswer;
+
+
           if (selectedOption === correctAnswer) {
             input.classList.add("correct");
+            correctCount++;
           } else {
             input.classList.add("incorrect");
           }
         }
-        let correctCount = document.querySelectorAll(
-          "#test input.correct"
-        ).length;
-        let resultText =
-          "You answered " +
-          correctCount +
-          " out of " +
-          questions.length +
-          " questions correctly.";
-        resultContainer.innerHTML = resultText; // Update the result container
+        let resultText = "You answered " + correctCount + " out of " + questions.length + " questions correctly.";
+    resultTextElement.innerHTML = resultText;
+
+
+    resultModal.style.display = 'block';
       });
+      window.onclick = function (event) {
+            if (event.target == resultModal) {
+                resultModal.style.display = "none";
+            }
+        };
+
+         // Social media share functionality (replace # with your actual share URLs)
+         document.getElementById('share-facebook').addEventListener('click', function () {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=#');
+        });
+
+        document.getElementById('share-twitter').addEventListener('click', function () {
+            window.open('https://twitter.com/intent/tweet?url=#&text=' + encodeURIComponent('Check out my quiz result!'));
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
