@@ -83,7 +83,9 @@
       <div id="result-modal" class="modal">
           <div class="modal-content">
               <p id="result-text"></p>
-              <img id="gif-image" src="https://media1.giphy.com/media/10FwycrnAkpshW/giphy.gif" alt="GIF">
+              <!-- Добавленный элемент для отображения гифки -->
+              <img id="result-gif" style="display: none;" alt="Result GIF">
+
               <div id="share-buttons">
                   <!-- Add your social media share buttons here -->
                   <a href="#" id="share-facebook">Share on Facebook</a>
@@ -342,10 +344,27 @@
           }
         }
         let resultText = "You answered " + correctCount + " out of " + questions.length + " questions correctly.";
-    resultTextElement.innerHTML = resultText;
+               resultTextElement.innerHTML = resultText;
 
 
-    resultModal.style.display = 'block';
+          // Выбор и отображение гифки в зависимости от оценки
+        let resultGifElement = document.getElementById('result-gif');
+        let gifPath;
+
+        if (correctCount === questions.length) {
+            gifPath = "https://media0.giphy.com/media/3OhXBaoR1tVPW/giphy.gif?cid=ecf05e477um67mvv9ba7z3yfe0e0mve0vi9j4qoqli5t0hog&ep=v1_gifs_search&rid=giphy.gif&ct=g";
+        } else if (correctCount >= questions.length / 2) {
+            gifPath = "https://media2.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif?cid=ecf05e47psaqdss8he073d3gu6t0wqtcn6leh3wl3poqw2ab&ep=v1_gifs_search&rid=giphy.gif&ct=g";
+        } else {
+            gifPath = "https://media1.giphy.com/media/10FwycrnAkpshW/giphy.gif";
+        }
+
+        // Установка пути к гифке и отображение элемента
+        resultGifElement.src = gifPath;
+        resultGifElement.style.display = 'block';
+
+
+        resultModal.style.display = 'block';
       });
       window.onclick = function (event) {
             if (event.target == resultModal) {
